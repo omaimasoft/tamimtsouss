@@ -1,10 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <title>عنوان الصفحة</title>
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Fonts -->
@@ -15,7 +13,7 @@
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-  <!-- CSS العام (مع url باش يشتغل مع GitHub Pages pathPrefix) -->
+  <!-- CSS العام -->
   <link rel="stylesheet" href="/assets/css/style.css?v=2">
   <link rel="stylesheet" href="/assets/css/navbar.css?v=2">
   <link rel="stylesheet" href="/assets/css/footer.css?v=2">
@@ -23,7 +21,7 @@
   <!-- CSS خاص بالصفحات -->
   
     
-      <link rel="stylesheet" href="assets/css/about.css">
+      <link rel="stylesheet" href="/assets/css/about.css?v=2">
     
   
 </head>
@@ -113,7 +111,8 @@ document.querySelectorAll("#navLinks a").forEach(link => {
 <section class="about-hero">
   <div class="hero-content">
     <h1>من نحن</h1>
-    <div class="about-image"></div>
+      <div class="about-image">
+    </div>
     <p>تعاونية عسب – عسل طبيعي من سوس، بثقة وجودة أصيلة</p>
   </div>
 </section>
@@ -123,6 +122,8 @@ document.querySelectorAll("#navLinks a").forEach(link => {
 
   <!-- نبذة + صورة -->
   <div class="about-card with-image">
+  
+
     <div class="about-content">
       <h2>نبذة عن التعاونية</h2>
       <p>
@@ -155,6 +156,8 @@ document.querySelectorAll("#navLinks a").forEach(link => {
     </p>
   </div>
 
+
+
 </section>
 
 <!-- ================= GALLERY ================= -->
@@ -162,10 +165,10 @@ document.querySelectorAll("#navLinks a").forEach(link => {
   <h2>من قلب العمل</h2>
 
   <div class="gallery-grid">
-    <img src="assets/images/honey-1.png" alt="عسل طبيعي مغربي">
-    <img src="assets/images/bees-1.png" alt="تربية النحل">
-    <img src="assets/images/honey-jar.png" alt="تعبئة العسل">
-    <img src="assets/images/beekeeper.png" alt="منتجو تعاونية تميمت سوس">
+    <img src="/assets/images/honey-1.png" alt="عسل طبيعي مغربي">
+    <img src="/assets/images/bees-1.png" alt="تربية النحل">
+    <img src="/assets/images/honey-jar.png" alt="تعبئة العسل">
+    <img src="/assets/images/beekeeper.png" alt="منتجو تعاونية تميمت سوس">
   </div>
 </section>
 
@@ -294,6 +297,5 @@ document.querySelectorAll("#navLinks a").forEach(link => {
 
   <!-- JS -->
   <script src="/assets/js/cart.js?v=2"></script>
-
 </body>
 </html>
