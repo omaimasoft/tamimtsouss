@@ -4,7 +4,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("robots.txt");
 
   return {
-    pathPrefix: "/tamimtsouss/",
+    pathPrefix: "", // ✅ مهم: دومين جديد = root
     dir: {
       input: ".",
       includes: "_includes",
