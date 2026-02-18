@@ -1,9 +1,6 @@
 module.exports = function (eleventyConfig) {
 
-  // نسخ مجلد assets كما هو
   eleventyConfig.addPassthroughCopy("assets");
-
-  // نسخ sitemap و robots
   eleventyConfig.addPassthroughCopy("sitemap.xml");
   eleventyConfig.addPassthroughCopy("robots.txt");
 
@@ -11,7 +8,7 @@ module.exports = function (eleventyConfig) {
     dir: {
       input: ".",
       includes: "_includes",
-      output: "docs"
-    },
+      output: "docs"   // ✅ بدل _site
+    }
   };
 };
