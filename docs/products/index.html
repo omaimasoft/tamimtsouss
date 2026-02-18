@@ -1,0 +1,589 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>المنتجات</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- CSS العام (مع url باش يشتغل مع GitHub Pages pathPrefix) -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=2">
+  <link rel="stylesheet" href="/assets/css/navbar.css?v=2">
+  <link rel="stylesheet" href="/assets/css/footer.css?v=2">
+
+  <!-- CSS خاص بالصفحات -->
+  
+    
+      <link rel="stylesheet" href="/assets/css/products.css">
+    
+  
+</head>
+
+<body>
+
+  <!-- Top Bar -->
+<div class="top-bar">
+  <p>عسل طبيعي من قلب سوس</p>
+</div>
+
+<nav class="navbar">
+  <div class="nav-container">
+
+    <div class="site-logo">
+      <img src="/assets/images/logo-icon1.png" alt="Tamimt Souss Logo">
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/">الرئيسية</a></li>
+      <li><a href="/about/">من نحن</a></li>
+      <li><a href="/products/">منتجاتنا</a></li>
+      <li><a href="/packages/">باقاتنا</a></li>
+      <li><a href="/contact/">اتصل بنا</a></li>
+    </ul>
+
+    <div class="nav-icons">
+
+      <div class="cart-icon" onclick="window.location.href='/cart/'">
+        <span class="material-icons">shopping_cart</span>
+        <span class="cart-count">0</span>
+      </div>
+
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+    </div>
+
+  </div>
+</nav>
+
+<div class="nav-overlay" id="navOverlay"></div>
+<script>
+const toggle = document.getElementById("menuToggle");
+const nav = document.getElementById("navLinks");
+const overlay = document.getElementById("navOverlay");
+
+function openMenu() {
+  nav.classList.add("active");
+  overlay.classList.add("active");
+  toggle.classList.add("active");
+  document.body.classList.add("menu-open");
+}
+
+function closeMenu() {
+  nav.classList.remove("active");
+  overlay.classList.remove("active");
+  toggle.classList.remove("active");
+  document.body.classList.remove("menu-open");
+}
+
+toggle.addEventListener("click", function () {
+  if (nav.classList.contains("active")) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
+});
+
+overlay.addEventListener("click", closeMenu);
+
+/* إغلاق عند الضغط على أي رابط بدون منع التنقل */
+document.querySelectorAll("#navLinks a").forEach(link => {
+  link.addEventListener("click", () => {
+    closeMenu();
+  });
+});
+</script>
+
+
+  <main>
+    
+
+<section class="products-hero">
+  <h1>منتجاتنا</h1>
+  <p>منتوجات طبيعية من خيرات النحل بجودة محلية</p>
+</section>
+
+
+<section class="products-filters">
+  <button class="filter-btn active" data-filter="all">الكل</button>
+  <button class="filter-btn" data-filter="honey">العسل</button>
+  <button class="filter-btn" data-filter="argan">زيت أركان</button>
+  <button class="filter-btn" data-filter="amlo">أملو</button>
+  <button class="filter-btn" data-filter="others">منتوجات أخرى</button>
+</section>
+
+<section class="products-section">
+ <div class="products-grid">
+
+  <!-- 🍯 عسل الليمون -->
+  <div class="product-card" data-category="honey">
+    <img src="/assets/images/honey-lemon.png" alt="عسل الليمون">
+    <h3>عسل الليمون</h3>
+
+    <p class="price">
+      <span class="old-price">100 درهم</span>
+      <span class="new-price">80 درهم</span>
+    </p>
+
+    <button class="btn add-to-cart"
+      data-id="honey-lemon"
+      data-name="عسل الليمون"
+      data-price="80"
+      data-image="/assets/images/honey-lemon.png">
+      أضف إلى السلة
+    </button>
+
+    <a href="/products/honey-lemon/" class="btn btn-secondary">
+      عرض التفاصيل
+    </a>
+  </div>
+
+
+  <!-- 🍯 عسل الدغموس -->
+  <div class="product-card" data-category="honey">
+    <img src="/assets/images/honey-daghmous.png" alt="عسل الدغموس">
+    <h3>عسل الدغموس</h3>
+
+    <p class="price">
+      <span class="old-price">300 درهم</span>
+      <span class="new-price">250 درهم</span>
+    </p>
+
+    <button class="btn add-to-cart"
+      data-id="honey-daghmous"
+      data-name="عسل الدغموس"
+      data-price="250"
+      data-image="/assets/images/honey-daghmous.png">
+      أضف إلى السلة
+    </button>
+
+    <a href="/products/honey-daghmous/" class="btn btn-secondary">عرض التفاصيل</a>
+  </div>
+
+
+  <!-- 🍯 عسل الأعشاب -->
+  <div class="product-card" data-category="honey">
+    <img src="/assets/images/honey-herbs.png" alt="عسل الأعشاب">
+    <h3>عسل الأعشاب</h3>
+
+    <p class="price">
+      <span class="old-price">250 درهم</span>
+      <span class="new-price">200 درهم</span>
+    </p>
+
+    <button class="btn add-to-cart"
+      data-id="honey-herbs"
+      data-name="عسل الأعشاب"
+      data-price="200"
+      data-image="/assets/images/honey-herbs.png">
+      أضف إلى السلة
+    </button>
+
+    <a href="/products/honey-herbs/" class="btn btn-secondary">عرض التفاصيل</a>
+  </div>
+
+
+  <!-- 🍯 عسل الخروب -->
+  <div class="product-card" data-category="honey">
+    <img src="/assets/images/honey-carob.png" alt="عسل الخروب">
+    <h3>عسل الخروب</h3>
+
+    <p class="price">
+      <span class="old-price">170 درهم</span>
+      <span class="new-price">150 درهم</span>
+    </p>
+
+    <button class="btn add-to-cart"
+      data-id="honey-carob"
+      data-name="عسل الخروب"
+      data-price="150"
+      data-image="/assets/images/honey-carob.png">
+      أضف إلى السلة
+    </button>
+
+    <a href="/products/honey-carob/" class="btn btn-secondary">عرض التفاصيل</a>
+  </div>
+
+
+  <!-- 🍯 عسل الزعتر -->
+  <div class="product-card" data-category="honey">
+    <img src="/assets/images/honey-zaatar.png" alt="عسل الزعتر">
+    <h3>عسل الزعتر</h3>
+
+    <p class="price">
+      <span class="old-price">400 درهم</span>
+      <span class="new-price">350 درهم</span>
+    </p>
+
+    <button class="btn add-to-cart"
+      data-id="honey-zaatar"
+      data-name="عسل الزعتر"
+      data-price="350"
+      data-image="/assets/images/honey-zaatar.png">
+      أضف إلى السلة
+    </button>
+
+    <a href="/products/honey-zaatar/" class="btn btn-secondary">عرض التفاصيل</a>
+  </div>
+
+
+  <!-- 🍯 عسل السدر -->
+  <div class="product-card" data-category="honey">
+    <img src="/assets/images/honey-sidr.png" alt="عسل السدر">
+    <h3>عسل السدر</h3>
+
+    <p class="price">
+      <span class="old-price">300 درهم</span>
+      <span class="new-price">250 درهم</span>
+    </p>
+
+    <button class="btn add-to-cart"
+      data-id="honey-sidr"
+      data-name="عسل السدر"
+      data-price="250"
+      data-image="/assets/images/honey-sidr.png">
+      أضف إلى السلة
+    </button>
+
+    <a href="/products/honey-sidr/" class="btn btn-secondary">عرض التفاصيل</a>
+  </div>
+
+
+  <!-- 🍯 عسل الأوكاليبتوس -->
+  <div class="product-card" data-category="honey">
+    <img src="/assets/images/honey-eucalyptus.png" alt="عسل الأوكاليبتوس">
+    <h3>عسل الأوكاليبتوس</h3>
+
+    <p class="price">
+      <span class="old-price">200 درهم</span>
+      <span class="new-price">150 درهم</span>
+    </p>
+
+    <button class="btn add-to-cart"
+      data-id="honey-eucalyptus"
+      data-name="عسل الأوكاليبتوس"
+      data-price="150"
+      data-image="/assets/images/honey-eucalyptus.png">
+      أضف إلى السلة
+    </button>
+
+    <a href="/products/honey-eucalyptus/" class="btn btn-secondary">عرض التفاصيل</a>
+  </div>
+
+<!-- 🥜 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++أملو لوز -->
+<div class="product-card" data-category="amlo">
+  <img src="/assets/images/amlo-almond.png" alt="أملو باللوز">
+  <h3>أملو باللوز</h3>
+
+  <p class="price">
+    <span class="old-price">150 درهم</span>
+    <span class="new-price">120 درهم</span>
+  </p>
+
+  <button class="btn add-to-cart"
+    data-id="amlo-almond"
+    data-name="أملو باللوز"
+    data-price="120"
+    data-image="/assets/images/amlo-almond.png">
+    أضف إلى السلة
+  </button>
+
+  <a href="/products/amlo-almond/" class="btn btn-secondary">
+    عرض التفاصيل
+  </a>
+
+  
+</div>
+<!-- 🌿 زيت أركان غذائي -->
+<div class="product-card" data-category="argan">
+  <img src="/assets/images/argan-oil.png" alt="زيت أركان غذائي">
+  <h3>زيت أركان غذائي</h3>
+
+  <p class="price">
+    <span class="old-price">200 درهم</span>
+    <span class="new-price">170 درهم</span>
+  </p>
+
+  <button class="btn add-to-cart"
+    data-id="argan-oil"
+    data-name="زيت أركان غذائي"
+    data-price="170"
+    data-image="/assets/images/argan-oil.png">
+    أضف إلى السلة
+  </button>
+
+  <a href="/products/argan-oil/" class="btn btn-secondary">
+    عرض التفاصيل
+  </a>
+</div>
+<!-- 🌿 زيت أركان 500 مل -->
+<div class="product-card" data-category="argan">
+  <img src="/assets/images/argan-oil-500ml.png" alt="زيت أركان غذائي 500 مل">
+  <h3>زيت أركان غذائي 500 مل</h3>
+
+  <p class="price">
+    <span class="old-price">200 درهم</span>
+    <span class="new-price">170 درهم</span>
+  </p>
+
+  <button class="btn add-to-cart"
+    data-id="argan-oil-500ml"
+    data-name="زيت أركان غذائي 500 مل"
+    data-price="170"
+    data-image="/assets/images/argan-oil-500ml.png">
+    أضف إلى السلة
+  </button>
+
+  <a href="/products/argan-oil-500ml/" class="btn btn-secondary">
+    عرض التفاصيل
+  </a>
+</div>
+<!-- 🌿 زيت أركان 250 مل -->
+<div class="product-card" data-category="argan">
+  <img src="/assets/images/argan-oil-250ml.png" alt="زيت أركان غذائي 250 مل">
+  <h3>زيت أركان غذائي 250 مل</h3>
+
+  <p class="price">
+    <span class="old-price">120 درهم</span>
+    <span class="new-price">100 درهم</span>
+  </p>
+
+  <button class="btn add-to-cart"
+    data-id="argan-oil-250ml"
+    data-name="زيت أركان غذائي 250 مل"
+    data-price="100"
+    data-image="/assets/images/argan-oil-250ml.png">
+    أضف إلى السلة
+  </button>
+
+  <a href="/products/argan-oil-250ml/" class="btn btn-secondary">
+    عرض التفاصيل
+  </a>
+</div>
+<!-- 🌸 زعفران بلدي -->
+<div class="product-card" data-category="others">
+  <img src="/assets/images/saffron.png" alt="زعفران بلدي أصلي">
+  <h3>زعفران بلدي أصلي</h3>
+
+  <p class="price">
+    <span class="old-price">250 درهم</span>
+    <span class="new-price">220 درهم</span>
+  </p>
+
+  <button class="btn add-to-cart"
+    data-id="saffron"
+    data-name="زعفران بلدي أصلي"
+    data-price="220"
+    data-image="/assets/images/saffron.png">
+    أضف إلى السلة
+  </button>
+
+  <a href="/products/saffron/" class="btn btn-secondary">
+    عرض التفاصيل
+  </a>
+</div>
+
+</section>
+
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  /* ===== FILTER ===== */
+  const buttons = document.querySelectorAll(".filter-btn");
+  const cards = document.querySelectorAll(".product-card");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", function () {
+
+      // إزالة active من الجميع
+      buttons.forEach(b => b.classList.remove("active"));
+      this.classList.add("active");
+
+      const filter = this.dataset.filter;
+
+      cards.forEach(card => {
+        if (filter === "all" || card.dataset.category === filter) {
+          card.style.display = "";   // يرجع للوضع الطبيعي (grid)
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+    });
+  });
+
+  /* ===== CATEGORY FROM URL ===== */
+  const params = new URLSearchParams(window.location.search);
+  const category = params.get("category");
+
+  if (category) {
+    const btn = document.querySelector(`.filter-btn[data-filter="${category}"]`);
+    if (btn) btn.click();
+  }
+
+  /* ===== CART ===== */
+  const cartButtons = document.querySelectorAll(".add-to-cart");
+
+  cartButtons.forEach(btn => {
+    btn.addEventListener("click", function () {
+
+      if (typeof addToCart === "function") {
+        addToCart({
+          id: this.dataset.id,
+          name: this.dataset.name,
+          price: Number(this.dataset.price),
+          image: this.dataset.image
+        });
+      } else {
+        console.warn("addToCart function not found");
+      }
+
+    });
+  });
+
+});
+</script>
+
+  </main>
+
+  
+<section class="features-bar">
+  <div class="features-container">
+    <div class="feature-item">
+      <i class="ri-truck-line"></i>
+      <h4>توصيل سريع</h4>
+      <p>توصيل لجميع المدن المغربية</p>
+    </div>
+    <div class="feature-item">
+      <i class="ri-secure-payment-line"></i>
+      <h4>دفع عند الاستلام</h4>
+      <p>أمان وثقة في كل طلب</p>
+    </div>
+    <div class="feature-item">
+      <i class="ri-shield-check-line"></i>
+      <h4>جودة مضمونة</h4>
+      <p>منتوج طبيعي من قلب سوس</p>
+    </div>
+    <div class="feature-item">
+      <i class="ri-customer-service-2-line"></i>
+      <h4>خدمة الزبناء</h4>
+      <p>دعم سريع عبر واتساب</p>
+    </div>
+  </div>
+</section>
+<footer class="footer-premium">
+
+  <div class="footer-inner">
+
+    <!-- ================= Brand ================= -->
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="/assets/images/logo-icon1.png" alt="شعار تعاونية تميمت سوس">
+      </div>
+
+      <p class="footer-desc">
+        تعاونية <strong>تميمت سوس</strong> هي تعاونية مغربية رائدة
+        في إنتاج وتسويق العسل الطبيعي  من قلب سوس.
+        نعمل بشغف على تقديم منتجات عالية الجودة،
+        مستخرجة بعناية من خلايانا المحلية
+        .
+      </p>
+
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+
+    <!-- ================= Quick Links ================= -->
+    <div class="footer-links">
+      <h4>روابط سريعة</h4>
+      <ul>
+        <li><a href="/">الرئيسية</a></li>
+        <li><a href="/about/">من نحن</a></li>
+        <li><a href="/products/">منتجاتنا</a></li>
+        <li><a href="/packages/">باقاتنا</a></li>
+        <li><a href="/contact/">اتصل بنا</a></li>
+      </ul>
+    </div>
+
+    <!-- ================= Products ================= -->
+    <div class="footer-links">
+      <h4>منتجاتنا</h4>
+      <ul>
+        <li><a href="/products/">العسل الطبيعي</a></li>
+        <li><a href="/products/">أملو أركان</a></li>
+        <li><a href="/products/">منتجات طبيعية أخرى</a></li>
+        <li><a href="/packages/">باقات الهدايا</a></li>
+        <li><a href="/contact/">طلب بالجملة</a></li>
+      </ul>
+    </div>
+
+    <!-- ================= Contact ================= -->
+    <div class="footer-contact">
+      <h4>تواصل معنا</h4>
+
+      <div class="contact-item">
+        <span class="contact-icon">
+          <i class="fas fa-location-dot"></i>
+        </span>
+        جهة سوس ماسة - المغرب
+      </div>
+
+      <div class="contact-item">
+        <span class="contact-icon">
+          <i class="fas fa-phone"></i>
+        </span>
+        <a href="tel:+212600000000">+212 6 00 00 00 00</a>
+      </div>
+
+      <div class="contact-item">
+        <span class="contact-icon">
+          <i class="fas fa-envelope"></i>
+        </span>
+        <a href="mailto:contact@tamimtsouss.ma">
+          contact@tamimtsouss.ma
+        </a>
+      </div>
+    </div>
+
+  </div> <!-- نهاية footer-inner -->
+
+  <!-- ================= Bottom ================= -->
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <p>© 2026 تعاونية تميمت سوس — جميع الحقوق محفوظة</p>
+      <p class="footer-credit">
+        تصميم وتطوير:
+        <a href="https://omaimasoft.com" target="_blank">
+          OmaimaSoft
+        </a>
+      </p>
+    </div>
+  </div>
+
+</footer>
+
+
+  <!-- JS -->
+  <script src="/assets/js/cart.js?v=2"></script>
+
+</body>
+</html>
