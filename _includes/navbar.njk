@@ -11,16 +11,16 @@
     </div>
 
     <ul class="nav-links" id="navLinks">
-      <li><a href="/">الرئيسية</a></li>
-      <li><a href="/about/">من نحن</a></li>
-      <li><a href="/products/">منتجاتنا</a></li>
-      <li><a href="/packages/">باقاتنا</a></li>
-      <li><a href="/contact/">اتصل بنا</a></li>
+      <li><a href="{{ '/' | url }}">الرئيسية</a></li>
+      <li><a href="{{ '/about/' | url }}">من نحن</a></li>
+      <li><a href="{{ '/products/' | url }}">منتجاتنا</a></li>
+      <li><a href="{{ '/packages/' | url }}">باقاتنا</a></li>
+      <li><a href="{{ '/contact/' | url }}">اتصل بنا</a></li>
     </ul>
 
     <div class="nav-icons">
 
-      <div class="cart-icon" onclick="window.location.href='/cart/'">
+<div class="cart-icon" onclick="window.location.href='{{ "/cart/" | url }}'">
         <span class="material-icons">shopping_cart</span>
         <span class="cart-count">0</span>
       </div>
