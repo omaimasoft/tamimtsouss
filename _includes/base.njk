@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>{{ title or "تعاونية النحل" }}</title>
+  <title>{{ title or "تعاونية تميمت سوس" }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Fonts -->
@@ -14,16 +14,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <!-- CSS العام -->
-  <link rel="stylesheet" href="{{ '/assets/css/style.css'  | url }}">
-<link rel="stylesheet" href="{{ '/assets/css/navbar.css' | url }}">
-<link rel="stylesheet" href="{{ '/assets/css/footer.css' | url }}">
+  <link rel="stylesheet" href="{{ 'assets/css/style.css'  | url }}">
+  <link rel="stylesheet" href="{{ 'assets/css/navbar.css' | url }}">
+  <link rel="stylesheet" href="{{ 'assets/css/footer.css' | url }}">
 
   <!-- CSS خاص بالصفحات -->
-{% if css %}
-  {% for file in css %}
-    <link rel="stylesheet" href="{{ file | url }}">
-  {% endfor %}
-{% endif %}
+  {% if css %}
+    {% for file in css %}
+      <link rel="stylesheet" href="{{ file | url }}">
+    {% endfor %}
+  {% endif %}
 
 </head>
 
@@ -38,6 +38,7 @@
   {% include "footer.njk" %}
 
   <!-- JS -->
-<script src="{{ '/assets/js/cart.js' | url }}"></script>
+  <script src="{{ 'assets/js/cart.js' | url }}"></script>
+
 </body>
 </html>
