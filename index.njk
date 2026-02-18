@@ -1,0 +1,287 @@
+---
+layout: base.njk
+title: الرئيسية | تعاونية عسب
+
+css:
+  - /assets/css/home.css
+---
+
+
+<section class="hero">
+  <div class="hero-image">
+    <img src="/assets/images/honey.png" alt="عسل طبيعي">
+  </div>
+
+  <div class="hero-content">
+    <h1>عسل طبيعي<br><span>من قلب سوس</span></h1>
+    <p>
+      نقدم لكم أجود أنواع العسل والمنتوجات <br>الطبيعية
+      من تعاونيتنا بجودة <br>عالية وأصالة مغربية.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="/products/" class="btn btn-primary">منتجاتنا</a>
+      <a href="/packs/" class="btn btn-secondary">باقاتنا</a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- النحلات -->
+
+  <img src="assets/images/bee-v2.png" class="bee bee-1">
+  <img src="assets/images/bee-v2.png" class="bee bee-2">
+  <img src="assets/images/bee-v2.png" class="bee bee-3">
+</section>
+
+
+<section class="honey-types">
+
+  <div class="section-header">
+    <h2>أنواع العسل الطبيعي وفوائده الصحية</h2>
+    <p>
+     نوفّر لكم تشكيلة مختارة من أجود أنواع العسل المغربي الأصيل،
+    مستخرج بعناية من مناحل طبيعية لضمان الجودة والنقاء  .</p>
+    <div class="scroll-hint">
+  ← اسحب لاكتشاف الأنواع   →
+</div>
+  </div>
+<div class="honey-scroll-wrapper">
+
+
+
+<div class="honey-grid">
+
+{% for product in products %}
+  {% if product.id.startsWith("honey-") %}
+
+    <div class="honey-card">
+      <div class="hexagon">
+        <img src="{{ product.image }}" alt="{{ product.name }}">
+      </div>
+
+      <h3>{{ product.name }}</h3>
+
+      <p class="honey-desc">
+        {{ product.description }}
+      </p>
+
+      <a href="/products/{{ product.id }}/" class="btn-honey">
+        اقرأ المزيد
+      </a>
+    </div>
+
+  {% endif %}
+{% endfor %}
+
+</div>
+
+
+
+   </div>
+</section>
+<section class="product-categories">
+
+  <div class="section-header">
+    <h2>أنواع المنتوجات التي نقدمها</h2>
+    <p>نقدّم مجموعة من المنتوجات الطبيعية الأصيلة المستخرجة بعناية وجودة عالية.</p>
+  </div>
+
+  <div class="categories-grid">
+
+    <!-- العسل -->
+    <div class="category-card">
+      <img src="/assets/images/category-honey.png" alt="العسل الطبيعي">
+      <div class="category-overlay">
+        <h3>العسل الطبيعي</h3>
+        <p>أنواع مختلفة من العسل البلدي وفوائده الصحية.</p>
+        <a href="/products/?category=honey" class="category-btn">اكتشف العسل</a>
+      </div>
+    </div>
+
+    <!-- زيت أركان -->
+    <div class="category-card">
+      <img src="/assets/images/category-argan.png" alt="زيت أركان">
+      <div class="category-overlay">
+        <h3>زيت أركان</h3>
+        <p>زيت أركان أصلي للتجميل والاستعمال الغذائي.</p>
+        <a href="/products/?category=argan" class="category-btn">اكتشف زيت أركان</a>
+      </div>
+    </div>
+
+    <!-- أملو -->
+    <div class="category-card">
+      <img src="/assets/images/category-amlo.png" alt="أملو بلدي">
+      <div class="category-overlay">
+        <h3>أملو بلدي</h3>
+        <p>أملو تقليدي غني بالطاقة ومكوّنات طبيعية.</p>
+        <a href="/products/?category=amlo" class="category-btn">اكتشف أملو</a>
+      </div>
+    </div>
+
+    <!-- أخرى -->
+    <div class="category-card">
+      <img src="/assets/images/category-others.png" alt="منتوجات أخرى">
+      <div class="category-overlay">
+        <h3>منتوجات أخرى</h3>
+        <p>منتوجات طبيعية مختارة بعناية من تعاونيتنا.</p>
+        <a href="/products/?category=others" class="category-btn">تصفح الكل</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================= PACKAGES HOME ================= -->
+<section class="home-packages">
+
+  <div class="section-header">
+    <h2>باقاتنا</h2>
+  </div>
+
+  <div class="packages-grid">
+
+    <!-- باقة 1 -->
+    <div class="package-card-home">
+      <img src="/assets/images/package-1.jpg" alt="باقة 1">
+      <div class="package-info">
+        <div class="price">550 درهم</div>
+        <a href="/packages/" class="btn-package">
+          عرض التفاصيل
+        </a>
+      </div>
+    </div>
+
+    <!-- باقة 2 -->
+    <div class="package-card-home">
+      <img src="/assets/images/package-2.jpg" alt="باقة 2">
+      <div class="package-info">
+        <div class="price">520 درهم</div>
+        <a href="/packages/" class="btn-package">
+          عرض التفاصيل
+        </a>
+      </div>
+    </div>
+
+    <!-- باقة 3 -->
+    <div class="package-card-home">
+      <img src="/assets/images/package-3.jpg" alt="باقة 3">
+      <div class="package-info">
+        <div class="price">575 درهم</div>
+        <a href="/packages/" class="btn-package">
+          عرض التفاصيل
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="testimonials">
+
+  <div class="section-header">
+    <h2>ماذا يقول عملاؤنا</h2>
+    <p>ثقة زبنائنا هي فخرنا الحقيقي</p>
+  </div>
+
+  <div class="testimonials-wrapper">
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">
+        "عسل السدر ممتاز وجودته عالية، طعم طبيعي ورائع.
+        أنصح به بشدة!"
+      </p>
+
+      <div class="testimonial-rating">
+        ★★★★★
+      </div>
+
+      <div class="testimonial-author">
+        <strong>فاطمة - أكادير</strong>
+        <span>20 يناير 2026</span>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">
+        "طلبت عسل الزعتر ووصلني بسرعة،
+        التغليف احترافي والجودة ممتازة."
+      </p>
+
+      <div class="testimonial-rating">
+        ★★★★☆
+      </div>
+
+      <div class="testimonial-author">
+        <strong>محمد - الدار البيضاء</strong>
+        <span>15 يناير 2026</span>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">
+        "منتوجات طبيعية 100%،
+        فرق واضح في الجودة مقارنة بالأسواق."
+      </p>
+
+      <div class="testimonial-rating">
+        ★★★★★
+      </div>
+
+      <div class="testimonial-author">
+        <strong>سلمى - مراكش</strong>
+        <span>10 يناير 2026</span>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+<section class="cta-section">
+
+  <div class="cta-content">
+    <h2>اطلب عسلك الطبيعي الآن</h2>
+    <p>
+     من قلب مناحلنا  الخاصة، نقدّم لكم تاميمت سوس عسلًا طبيعيًا نقيًا، يُستخرج بعناية ليصل إليكم بطعمه الأصيل وجودته العالية.
+    </p>
+
+    <div class="cta-buttons">
+      <a href="/products/" class="cta-btn primary">
+        تصفح المنتجات
+      </a>
+
+      <a href="https://wa.me/212770898635" class="cta-btn secondary">
+        تواصل عبر واتساب
+      </a>
+    </div>
+  </div>
+
+</section>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  /* 🐝 حركة النحل */
+  const bees = document.querySelectorAll(".bee");
+  bees.forEach((bee, index) => {
+    setTimeout(() => {
+      bee.classList.add("fly");
+    }, index * 700);
+  });
+
+  /* 🧩 فلترة حسب الرابط ?category= */
+  const params = new URLSearchParams(window.location.search);
+  const category = params.get("category");
+
+  if (category) {
+    const btn = document.querySelector(
+      `.filter-btn[data-filter="${category}"]`
+    );
+    if (btn) btn.click();
+  }
+
+});
+</script>
+

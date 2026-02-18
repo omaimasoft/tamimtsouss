@@ -1,0 +1,75 @@
+<!-- Top Bar -->
+<div class="top-bar">
+  <p>عسل طبيعي من قلب سوس</p>
+</div>
+
+<nav class="navbar">
+  <div class="nav-container">
+
+    <div class="site-logo">
+      <img src="/assets/images/logo-icon1.png" alt="Tamimt Souss Logo">
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/">الرئيسية</a></li>
+      <li><a href="/about/">من نحن</a></li>
+      <li><a href="/products/">منتجاتنا</a></li>
+      <li><a href="/packages/">باقاتنا</a></li>
+      <li><a href="/contact/">اتصل بنا</a></li>
+    </ul>
+
+    <div class="nav-icons">
+
+      <div class="cart-icon" onclick="window.location.href='/cart/'">
+        <span class="material-icons">shopping_cart</span>
+        <span class="cart-count">0</span>
+      </div>
+
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+    </div>
+
+  </div>
+</nav>
+
+<div class="nav-overlay" id="navOverlay"></div>
+<script>
+const toggle = document.getElementById("menuToggle");
+const nav = document.getElementById("navLinks");
+const overlay = document.getElementById("navOverlay");
+
+function openMenu() {
+  nav.classList.add("active");
+  overlay.classList.add("active");
+  toggle.classList.add("active");
+  document.body.classList.add("menu-open");
+}
+
+function closeMenu() {
+  nav.classList.remove("active");
+  overlay.classList.remove("active");
+  toggle.classList.remove("active");
+  document.body.classList.remove("menu-open");
+}
+
+toggle.addEventListener("click", function () {
+  if (nav.classList.contains("active")) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
+});
+
+overlay.addEventListener("click", closeMenu);
+
+/* إغلاق عند الضغط على أي رابط بدون منع التنقل */
+document.querySelectorAll("#navLinks a").forEach(link => {
+  link.addEventListener("click", () => {
+    closeMenu();
+  });
+});
+</script>

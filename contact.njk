@@ -1,0 +1,131 @@
+---
+layout: base.njk
+title: اتصل بنا | تعاونية عسب
+
+css:
+  - /assets/css/contact.css
+---
+
+
+<!-- ================= HERO ================= -->
+<section class="contact-hero">
+  <h1>اتصل بنا</h1>
+  <p>نحن سعداء بتواصلكم معنا والإجابة عن جميع استفساراتكم</p>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact-section">
+
+  <!-- الفورم -->
+  <div class="contact-form">
+    <h2>أرسل رسالة</h2>
+
+    <form
+      id="contactForm"
+      action="https://formspree.io/f/mzdazarp"
+      method="POST"
+    >
+      <input
+        type="text"
+        name="name"
+        placeholder="الاسم الكامل"
+        required
+      >
+
+      <input
+        type="email"
+        name="email"
+        placeholder="البريد الإلكتروني"
+        required
+      >
+
+      <input
+        type="tel"
+        name="phone"
+        placeholder="رقم الهاتف"
+        pattern="^\+?[0-9\s]{9,15}$"
+        required
+      >
+
+      <textarea
+        name="message"
+        placeholder="رسالتك"
+        required
+      ></textarea>
+
+      <button type="submit">إرسال</button>
+
+      <!-- رسالة النجاح -->
+      <div class="form-success" style="display:none;">
+         تم إرسال رسالتك بنجاح، سنقوم بالرد عليك في أقرب وقت
+      </div>
+    </form>
+  </div>
+
+  <!-- معلومات التواصل -->
+  <div class="contact-info">
+    <h2>معلومات التواصل</h2>
+<div class="contact-item">
+  <i class="fa-solid fa-location-dot"></i>
+  <span>المغرب</span>
+</div>
+
+<div class="contact-item">
+  <i class="fa-solid fa-phone"></i>
+  <div class="contact-links">
+    <a href="tel:+212763538294">+212 763 538 294</a>
+    <a href="tel:+212770898635">+212 770 898 635</a>
+  </div>
+</div>
+
+<div class="contact-item">
+  <i class="fa-solid fa-envelope"></i>
+  <a href="mailto:omaimaboustik@gmail.com">
+    omaimaboustik@gmail.com
+  </a>
+</div>
+
+    <p class="contact-note">
+      نرد على الرسائل الإلكترونية في أقرب وقت ممكن.
+    </p>
+  </div>
+
+</section>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+  const form = document.getElementById("contactForm");
+  const successMsg = form.querySelector(".form-success");
+  const submitBtn = form.querySelector("button");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "جاري الإرسال...";
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          "Accept": "application/json"
+        }
+      });
+
+      if (response.ok) {
+        form.reset();
+        successMsg.style.display = "block";
+      } else {
+        alert("حدث خطأ أثناء الإرسال، المرجو المحاولة لاحقًا.");
+      }
+    } catch (error) {
+      alert("تعذر إرسال الرسالة. تحقق من الاتصال بالإنترنت.");
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "إرسال";
+    }
+  });
+</script>

@@ -1,0 +1,127 @@
+---
+layout: base.njk
+title: سلة المشتريات
+css:
+  - /assets/css/cart.css
+---
+
+<section class="cart-page">
+
+  <h1 class="cart-title">سلة المشتريات</h1>
+
+  <div class="cart-layout">
+
+    <!-- المنتجات -->
+    <div class="cart-items" id="cart-items"></div>
+
+    <!-- ملخص الطلب -->
+    <aside class="cart-summary">
+
+      <h3>ملخص الطلب</h3>
+
+      <div class="summary-line">
+        <span>المجموع الفرعي</span>
+        <strong><span id="cart-subtotal">0</span> درهم</strong>
+      </div>
+
+      <div class="summary-line">
+        <span>التوصيل</span>
+        <strong><span id="shipping-cost">0</span> درهم</strong>
+      </div>
+
+      <div class="summary-line total">
+        <span>الإجمالي</span>
+        <strong><span id="cart-total">0</span> درهم</strong>
+      </div>
+
+      <button class="whatsapp-btn" onclick="confirmOrder()">
+        اطلب عبر واتساب
+      </button>
+
+      <button class="danger-btn" onclick="clearCart()">
+        تفريغ السلة
+      </button>
+
+    </aside>
+
+  </div>
+
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const cartItemsEl = document.getElementById("cart-items");
+  const subtotalEl  = document.getElementById("cart-subtotal");
+  const totalEl     = document.getElementById("cart-total");
+  const shippingEl  = document.getElementById("shipping-cost");
+
+  if (!cartItemsEl) return;
+
+  const cart = getCart();
+  let total = 0;
+
+  if (cart.length === 0) {
+    cartItemsEl.innerHTML = `
+      <div class="empty-cart">
+       السلة فارغة حالياً
+      </div>
+    `;
+    subtotalEl.textContent = "0";
+    totalEl.textContent = "0";
+    shippingEl.textContent = "0";
+    return;
+  }
+
+  cartItemsEl.innerHTML = "";
+
+  cart.forEach(item => {
+
+    const itemTotal = item.price * item.qty;
+    total += itemTotal;
+
+    cartItemsEl.innerHTML += `
+      <div class="cart-item">
+
+        <!-- زر الحذف في الأعلى -->
+        <button class="remove-btn"
+          onclick="removeFromCart('${item.id}')">
+          <span class="material-icons">close</span>
+        </button>
+
+        <div class="cart-image">
+          <img src="${item.image}" alt="${item.name}">
+        </div>
+
+        <div class="cart-info">
+
+          <h3>${item.name}</h3>
+          <p class="price">${item.price} درهم</p>
+
+          <div class="cart-qty">
+            <button onclick="updateQty('${item.id}', ${item.qty - 1})"
+              ${item.qty === 1 ? "disabled" : ""}>−</button>
+
+            <span>${item.qty}</span>
+
+            <button onclick="updateQty('${item.id}', ${item.qty + 1})">+</button>
+          </div>
+
+          <p class="item-total">المجموع: ${itemTotal} درهم</p>
+
+        </div>
+
+      </div>
+    `;
+  });
+
+  // حساب التوصيل
+  let shipping = total >= 600 ? 0 : 40;
+  let finalTotal = total + shipping;
+
+  subtotalEl.textContent = total;
+  shippingEl.textContent = shipping;
+  totalEl.textContent = finalTotal;
+
+});
+</script>

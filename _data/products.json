@@ -1,0 +1,111 @@
+[
+  {
+    "id": "honey-lemon",
+    "name": "عسل الليمون",
+    "price": 80,
+    "oldPrice": 100,
+    "discount": 20,
+    "description": "عسل طبيعي مستخلص من أزهار الليمون بسوس، يتميز بطعم خفيف ومنعش. يساعد على تهدئة السعال، تقوية المناعة، وتحسين الهضم. مثالي للاستعمال اليومي ولنزلات البرد.",
+    "image": "/assets/images/honey-lemon.png"
+  },
+  {
+    "id": "honey-daghmous",
+    "name": "عسل الدغموس",
+    "price": 250,
+    "oldPrice": 300,
+    "discount": 17,
+    "description": "من أقوى وأندر أنواع العسل المغربي. معروف بدعمه القوي للمناعة والطاقة، ويُستعمل تقليدياً لتعزيز النشاط العام وتحسين الصحة.",
+    "image": "/assets/images/honey-daghmous.png"
+  },
+  {
+    "id": "honey-herbs",
+    "name": "عسل الأعشاب",
+    "price": 200,
+    "oldPrice": 250,
+    "discount": 20,
+    "description": "عسل طبيعي من أزهار برية متنوعة، غني بالمعادن ومضادات الأكسدة. يمنح طاقة طبيعية ويساعد على تقوية الجهاز المناعي.",
+    "image": "/assets/images/honey-herbs.png"
+  },
+  {
+    "id": "honey-carob",
+    "name": "عسل الخروب",
+    "price": 150,
+    "oldPrice": 170,
+    "discount": 12,
+    "description": "عسل داكن غني بالحديد والمعادن، مفيد لفقر الدم ويعزز النشاط البدني. طعمه قوي ومميز ومناسب لمن يبحث عن تغذية طبيعية مركزة.",
+    "image": "/assets/images/honey-carob.png"
+  },
+  {
+    "id": "honey-zaatar",
+    "name": "عسل الزعتر",
+    "price": 350,
+    "oldPrice": 400,
+    "discount": 13,
+    "description": "عسل فاخر مستخلص من زهور الزعتر البري. يقوي المناعة، مفيد للجهاز التنفسي، ويتميز بنكهة قوية وعطرية مميزة.",
+    "image": "/assets/images/honey-zaatar.png"
+  },
+  {
+    "id": "honey-sidr",
+    "name": "عسل السدر",
+    "price": 250,
+    "oldPrice": 300,
+    "discount": 17,
+    "description": "من أجود وأغلى أنواع العسل المغربي. يعزز المناعة، مفيد للمعدة، ويمد الجسم بطاقة طبيعية عالية الجودة.",
+    "image": "/assets/images/honey-sidr.png"
+  },
+  {
+    "id": "honey-eucalyptus",
+    "name": "عسل الأوكاليبتوس",
+    "price": 150,
+    "oldPrice": 200,
+    "discount": 25,
+    "description": "عسل مميز بفوائده للجهاز التنفسي. يساعد على تخفيف السعال واحتقان الصدر، وله طعم قوي مائل للخشبي.",
+    "image": "/assets/images/honey-eucalyptus.png"
+  },
+  {
+  "id": "amlo-almond",
+  "name": "أملو باللوز",
+  "category": "amlo",
+  "image": "/assets/images/amlo-almond.png",
+  "old_price": 150,
+  "price": 120,
+  "description": "أملو مغربي أصلي مصنوع من زيت أركان واللوز المحمص والعسل الطبيعي، بطعم غني وقيمة غذائية عالية."
+}
+,
+    {
+    "id": "argan-oil-1l",
+    "name": "زيت أركان غذائي 1 لتر",
+    "category": "argan",
+    "image": "/assets/images/argan-oil-1l.png",
+    "old_price": 350,
+    "price": 300,
+    "description": "زيت أركان طبيعي 100% غني بفيتامين E ومضادات الأكسدة."
+  },
+  {
+    "id": "argan-oil-500ml",
+    "name": "زيت أركان غذائي 500 مل",
+    "category": "argan",
+    "image": "/assets/images/argan-oil-500ml.png",
+    "old_price": 200,
+    "price": 170,
+    "description": "زيت أركان نقي بعصر تقليدي وجودة ممتازة."
+  },
+  {
+    "id": "argan-oil-250ml",
+    "name": "زيت أركان غذائي 250 مل",
+    "category": "argan",
+    "image": "/assets/images/argan-oil-250ml.png",
+    "old_price": 120,
+    "price": 100,
+    "description": "حجم عملي للتجربة بنفس الجودة العالية."
+  },
+  {
+    "id": "saffron",
+    "name": "زعفران بلدي أصلي",
+    "category": "others",
+    "image": "/assets/images/saffron.png",
+    "old_price": 250,
+    "price": 220,
+    "description": "زعفران مغربي أصلي بلون قوي ورائحة زكية."
+  }
+]

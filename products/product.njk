@@ -1,0 +1,119 @@
+---
+layout: base.njk
+
+pagination:
+  data: products
+  size: 1
+  alias: product
+
+permalink: "/products/{{ product.id }}/"
+
+title: "{{ product.name }} | عاونية تميمت سوس"
+
+css:
+  - /assets/css/product.css
+---
+
+
+
+<section class="product-detail">
+  <div class="container">
+
+    <div class="product-wrapper">
+
+      <!-- الصورة -->
+      <div class="product-image">
+        <img src="{{ product.image }}" alt="{{ product.name }}">
+      </div>
+
+      <!-- المعلومات -->
+      <div class="product-info">
+        <h1>{{ product.name }}</h1>
+
+        <p class="product-description">
+          {{ product.description }}
+        </p>
+
+        <div class="product-price">
+          {% if product.oldPrice %}
+            <span class="old-price">{{ product.oldPrice }} درهم</span>
+          {% endif %}
+          <span class="new-price">{{ product.price }} درهم</span>
+        </div>
+
+        <div class="quantity-wrapper">
+          <span class="qty-label">الكمية:</span>
+
+          <div class="qty-control">
+            <button type="button" class="qty-btn" onclick="changeQty(-1)">−</button>
+            <input type="number" id="quantity" value="1" min="1">
+            <button type="button" class="qty-btn" onclick="changeQty(1)">+</button>
+          </div>
+        </div>
+
+        <div class="product-actions">
+          <button class="btn btn-primary add-to-cart"
+            data-id="{{ product.id }}"
+            data-name="{{ product.name }}"
+            data-price="{{ product.price }}"
+            data-image="{{ product.image }}">
+            أضف إلى السلة
+          </button>
+
+          <button class="btn btn-secondary" onclick="buyNow()">
+            شراء الآن
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+<script>
+document.querySelector(".add-to-cart")?.addEventListener("click", function () {
+  addToCart({
+    id: this.dataset.id,
+    name: this.dataset.name,
+    price: Number(this.dataset.price),
+    image: this.dataset.image
+  });
+});
+
+function buyNow() {
+  document.querySelector(".add-to-cart").click();
+  window.location.href = "/cart/";
+}
+
+function changeQty(value) {
+  const qtyInput = document.getElementById("quantity");
+  let qty = parseInt(qtyInput.value);
+
+  if (isNaN(qty)) qty = 1;
+  qty = qty + value;
+  if (qty < 1) qty = 1;
+
+  qtyInput.value = qty;
+}
+
+document.querySelector(".add-to-cart")?.addEventListener("click", function () {
+  const qty = parseInt(document.getElementById("quantity").value) || 1;
+
+  addToCart({
+    id: this.dataset.id,
+    name: this.dataset.name,
+    price: Number(this.dataset.price),
+    image: this.dataset.image,
+    qty: qty
+  });
+});
+
+function buyNow() {
+  document.querySelector(".add-to-cart").click();
+  window.location.href = "/cart/";
+}
+
+</script>
