@@ -13,7 +13,5 @@ module.exports = function (eleventyConfig) {
       includes: "_includes",
       output: "_site"
     },
-    // مهم جداً لـ GitHub Pages (اسم الريبو)
-    pathPrefix: "/tamimtsouss/"
   };
 };
