@@ -9,11 +9,10 @@ html, body{
   min-height: 75vh;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start; /* ⬅️ النص يمشي لليسار */
 
-  /* المهم: نخليو بلاصة للصورة فاليسار */
   padding: 90px 8%;
-  padding-left: 52%;
+  padding-right: 52%; /* ⬅️ نخليو بلاصة للصورة فاليمين */
 
   position: relative;
   overflow: hidden;
@@ -21,12 +20,12 @@ html, body{
   background:
     linear-gradient(rgba(255,255,255,0.70), rgba(255,255,255,0.70)),
     url("/assets/images/honey.png");
-  background-repeat: no-repeat;
 
-  /* هادي اللي كتصلّح الفراغ */
+  background-repeat: no-repeat;
   background-size: 46% auto;
-  background-position: left center;
+  background-position: right center; /* ⬅️ الصورة تمشي لليمين */
 }
+
 
 .hero-content{
   max-width: 560px;
