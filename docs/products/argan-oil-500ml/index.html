@@ -162,15 +162,16 @@ document.querySelectorAll("#navLinks a").forEach(link => {
   </div>
 </section>
 
-
-
 <script>
 document.querySelector(".add-to-cart")?.addEventListener("click", function () {
+  const qty = parseInt(document.getElementById("quantity").value) || 1;
+
   addToCart({
     id: this.dataset.id,
     name: this.dataset.name,
     price: Number(this.dataset.price),
-    image: this.dataset.image
+    image: this.dataset.image,
+    qty: qty
   });
 });
 
@@ -189,24 +190,6 @@ function changeQty(value) {
 
   qtyInput.value = qty;
 }
-
-document.querySelector(".add-to-cart")?.addEventListener("click", function () {
-  const qty = parseInt(document.getElementById("quantity").value) || 1;
-
-  addToCart({
-    id: this.dataset.id,
-    name: this.dataset.name,
-    price: Number(this.dataset.price),
-    image: this.dataset.image,
-    qty: qty
-  });
-});
-
-function buyNow() {
-  document.querySelector(".add-to-cart").click();
-  window.location.href = "/cart/";
-}
-
 </script>
 
   </main>

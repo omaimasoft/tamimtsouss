@@ -1,6 +1,5 @@
-
 /* ===============================
-   CART – LocalStorage Logic
+   CART – LocalStorage Logic (Final)
 ================================ */
 
 function getCart() {
@@ -17,27 +16,40 @@ function updateCartIcon() {
   if (!countEl) return;
 
   const cart = getCart();
-  const count = cart.reduce((sum, item) => sum + item.qty, 0);
+  const count = cart.reduce((sum, item) => sum + (Number(item.qty) || 0), 0);
 
   countEl.textContent = count;
   countEl.style.display = count > 0 ? "inline-block" : "none";
 }
 
+/* ✅ FINAL: supports qty from product page */
 function addToCart(product) {
   const cart = getCart();
+
+  // qty coming from page (fallback = 1)
+  const qtyToAdd = Math.max(1, parseInt(product.qty, 10) || 1);
+
   const existing = cart.find(item => item.id === product.id);
 
   if (existing) {
-    existing.qty += 1;
+    existing.qty = (parseInt(existing.qty, 10) || 0) + qtyToAdd;
   } else {
-    cart.push({ ...product, qty: 1 });
+    cart.push({
+      id: product.id,
+      name: product.name,
+      price: Number(product.price) || 0,
+      image: product.image || "",
+      qty: qtyToAdd
+    });
   }
 
   saveCart(cart);
 }
 
 function updateQty(id, qty) {
-  if (qty < 1) return;
+  qty = parseInt(qty, 10);
+  if (!qty || qty < 1) return;
+
   const cart = getCart();
   const item = cart.find(i => i.id === id);
 
@@ -75,8 +87,9 @@ function confirmOrder() {
   let total = 0;
 
   cart.forEach(item => {
-    message += `• ${item.name} × ${item.qty} = ${item.price * item.qty} درهم\n`;
-    total += item.price * item.qty;
+    const lineTotal = (Number(item.price) || 0) * (Number(item.qty) || 0);
+    message += `• ${item.name} × ${item.qty} = ${lineTotal} درهم\n`;
+    total += lineTotal;
   });
 
   message += `\n💰 المجموع: ${total} درهم`;
