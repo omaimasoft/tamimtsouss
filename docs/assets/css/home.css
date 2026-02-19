@@ -12,9 +12,10 @@ html, body{
   min-height: 75vh;
   display: flex;
   align-items: center;
-  justify-content: flex-end;     /* النص فاليمين */
+
+  /* نخلي المحتوى يكون طبيعي */
+  justify-content: flex-end;
   padding: 90px 8%;
-  padding-left: 52%;            /* نخلي بلاصة للصورة فاليسار */
 
   position: relative;
   overflow: hidden;
@@ -23,14 +24,43 @@ html, body{
     linear-gradient(rgba(255,255,255,0.70), rgba(255,255,255,0.70)),
     url("/assets/images/honey.png");
   background-repeat: no-repeat;
-  background-size: 46% auto;    /* حجم الصورة فاليسار */
+  background-size: 45% auto;
   background-position: left center;
 }
 
+/* نخلي النص مايمشيش بعيد بزاف */
 .hero-content{
+  width: 55%;
   max-width: 560px;
   text-align: right;
 }
+
+/* Mobile */
+@media (max-width: 768px){
+  .hero{
+    min-height: 80vh;
+    padding: 40px 20px;
+    justify-content: center;
+    text-align: center;
+
+    /* مهم: نحيد أي padding غير منطقي */
+    padding-left: 20px;
+    padding-right: 20px;
+
+    background:
+      linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
+      url("/assets/images/honey.png");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero-content{
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
 
 .hero-content h1{
   font-size: 42px;
