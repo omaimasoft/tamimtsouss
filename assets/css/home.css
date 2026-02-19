@@ -2,60 +2,7 @@ html, body {
   width: 100%;
   overflow-x: hidden;
 }
-/* ================= MOBILE & TABLET ================= */
-@media (max-width: 992px) {
 
-  .honey-grid {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 10px 5px 20px;
-    scroll-snap-type: x mandatory;
-  }
-
-  .honey-grid::-webkit-scrollbar {
-    height: 6px;
-  }
-
-  .honey-grid::-webkit-scrollbar-thumb {
-    background: #f2b705;
-    border-radius: 10px;
-  }
-
-  .honey-card {
-    min-width: 200px;
-    scroll-snap-align: center;
-    text-align: center;
-  }
-
-  /* تصغير الهكساغون */
-  .hexagon {
-    width: 85px;
-    height: 68px;
-    padding: 14px;
-  }
-
-  .hexagon span {
-    font-size: 14px;
-  }
-
-  /* العنوان */
-  .honey-card h3 {
-    font-size: 16px;
-  }
-
-  /* الوصف */
-  .honey-card p {
-    font-size: 13px;
-    min-height: auto;
-  }
-
-  /* الزر */
-  .btn-honey {
-    font-size: 12px;
-    padding: 6px 16px;
-  }
-}
 /* ================= HERO (DESKTOP) ================= */
 .hero{
   width: 100%;
@@ -88,7 +35,22 @@ html, body {
   padding-right: 8%;
 }
 
-/* ================= HERO (MOBILE) ✅ نسخة واحدة فقط ================= */
+/* ================= BUTTONS ================= */
+.hero-buttons{
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.btn{
+  padding: 10px 22px;
+  border-radius: 80px;
+  font-size: 15px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+/* ================= HERO (MOBILE) ✅ فقط هذا ================= */
 @media (max-width: 768px){
   .hero{
     flex-direction: column;
@@ -107,13 +69,12 @@ html, body {
   .hero-image img{
     width: 100%;
     max-width: 420px;
-    height: auto;          /* ✅ ماشي 65vh */
+    height: auto;
     max-height: 280px;
-    object-fit: contain;   /* ✅ ماشي cover */
+    object-fit: contain;
   }
 
   .hero-content{
-    position: static;      /* ✅ ماشي absolute */
     max-width: 100%;
     padding: 0;
     text-align: center;
@@ -143,77 +104,6 @@ html, body {
   }
 }
 
-/* ================= BUTTONS ================= */
-.hero-buttons {
-  display: flex;
-  gap: 10px;
-  justify-content: flex-start;
-}
-
-.btn {
-  padding: 10px 22px;
-  border-radius: 80px;
-  font-size: 15px;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-.btn-primary {
-  background: #1f3d1b;
-  color: #fff;
-}
-
-.btn-primary:hover {
-  background: #163015;
-}
-
-.btn-secondary {
-  background: #f2b705;
-  color: #000;
-}
-
-.btn-secondary:hover {
-  background: #ffcc33;
-}
-
-/* ================= 📱 MOBILE ================= */
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;   /* ⬅️ النص فوق، الصورة تحت */
-    justify-content: center;
-    text-align: center;
-    padding: 60px 20px;
-  }
-
-  .hero-content {
-    max-width: 100%;
-    padding-right: 0;
-    text-align: center;
-    margin-bottom: 30px;
-  }
-
-  .hero-content h1 {
-    font-size: 30px;
-  }
-
-  .hero-content p {
-    font-size: 15px;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .hero-image {
-    justify-content: center;
-  }
-
-  .hero-image img {
-    max-width: 90%;
-    max-height: 420px;
-  }
-}
 
 
 .bee {
