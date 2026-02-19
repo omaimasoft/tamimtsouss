@@ -56,92 +56,6 @@ html, body {
     padding: 6px 16px;
   }
 }
-/* ================= HERO (DESKTOP) ================= */
-.hero{
-  width: 100%;
-  min-height: 70vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.hero-image{
-  flex: 1;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.hero-image img{
-  width: 100%;
-  height: auto;
-  max-height: 700px;
-  object-fit: contain;
-  display: block;
-}
-
-.hero-content{
-  flex: 1;
-  max-width: 520px;
-  text-align: right;
-  padding-right: 8%;
-}
-
-/* ================= HERO (MOBILE) ✅ نسخة واحدة فقط ================= */
-@media (max-width: 768px){
-  .hero{
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px 16px;
-    min-height: auto;
-    text-align: center;
-  }
-
-  .hero-image{
-    width: 100%;
-    justify-content: center;
-    margin: 0 0 12px 0;
-  }
-
-  .hero-image img{
-    width: 100%;
-    max-width: 420px;
-    height: auto;          /* ✅ ماشي 65vh */
-    max-height: 280px;
-    object-fit: contain;   /* ✅ ماشي cover */
-  }
-
-  .hero-content{
-    position: static;      /* ✅ ماشي absolute */
-    max-width: 100%;
-    padding: 0;
-    text-align: center;
-  }
-
-  .hero-content h1{
-    font-size: 24px;
-    line-height: 1.4;
-    margin-bottom: 10px;
-  }
-
-  .hero-content p{
-    font-size: 14px;
-    line-height: 1.8;
-    margin-bottom: 18px;
-  }
-
-  .hero-buttons{
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  .btn{
-    padding: 8px 16px;
-    font-size: 13px;
-  }
-}
 
 /* ================= BUTTONS ================= */
 .hero-buttons {
@@ -305,6 +219,28 @@ html, body {
   }
 }
 
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .hero-image {
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
 
 .bee {
   position: absolute;
