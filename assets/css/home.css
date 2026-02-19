@@ -71,9 +71,9 @@ html, body {
 
   /* نخلي الصورة داخل كارد */
   .hero-image img{
-    width: 92%;
+    width: 100%;
     max-width: 360px;
-    height: 210px;          /* ✅ بدل auto */
+    height: 310px;          /* ✅ بدل auto */
     object-fit: cover;      /* ✅ يعطي شكل احترافي */
     border-radius: 18px;    /* ✅ كارد */
     box-shadow: 0 14px 35px rgba(0,0,0,.10);
