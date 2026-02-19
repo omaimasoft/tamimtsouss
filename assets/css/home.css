@@ -11,7 +11,7 @@ html, body{
   align-items: center;
   justify-content: flex-start; /* ⬅️ النص يمشي لليسار */
 
-  padding: 90px 8%;
+  padding: 50px 8%;
   padding-right: 30%; /* ⬅️ نخليو بلاصة للصورة فاليمين */
 
   position: relative;
