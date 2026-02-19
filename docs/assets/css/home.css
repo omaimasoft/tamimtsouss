@@ -103,7 +103,7 @@ html, body{
     text-align: center;
 
     /* مهم: نلغي padding-left ديال الديسكتوب */
-    padding-left: -150px;
+    padding-left: 150px;
 
     background:
       linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
