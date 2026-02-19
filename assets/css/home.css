@@ -49,60 +49,68 @@ html, body {
   text-decoration: none;
   transition: 0.3s ease;
 }
-
-/* ================= HERO (MOBILE) ✅ فقط هذا ================= */
+/* ✅ Mobile Hero: شكل احترافي */
 @media (max-width: 768px){
   .hero{
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    padding: 20px 16px;
+    padding: 18px 14px 28px;
+    gap: 14px;
     min-height: auto;
     text-align: center;
   }
 
+  /* نحدد حجم منطقة الصورة */
   .hero-image{
     width: 100%;
+    display: flex;
     justify-content: center;
-    margin: 0 0 12px 0;
+    margin: 0;
   }
 
+  /* نخلي الصورة داخل كارد */
   .hero-image img{
-    width: 100%;
-    max-width: 420px;
-    height: auto;
-    max-height: 280px;
-    object-fit: contain;
+    width: 92%;
+    max-width: 360px;
+    height: 210px;          /* ✅ بدل auto */
+    object-fit: cover;      /* ✅ يعطي شكل احترافي */
+    border-radius: 18px;    /* ✅ كارد */
+    box-shadow: 0 14px 35px rgba(0,0,0,.10);
+    background: #fff;
   }
 
   .hero-content{
-    max-width: 100%;
+    max-width: 520px;
     padding: 0;
     text-align: center;
   }
 
   .hero-content h1{
-    font-size: 24px;
-    line-height: 1.4;
-    margin-bottom: 10px;
+    font-size: 26px;
+    line-height: 1.35;
+    margin: 6px 0 8px;
   }
 
   .hero-content p{
     font-size: 14px;
     line-height: 1.8;
-    margin-bottom: 18px;
+    margin: 0 0 14px;
+    color: #555;
   }
 
   .hero-buttons{
     justify-content: center;
+    gap: 10px;
     flex-wrap: wrap;
-    gap: 12px;
   }
 
   .btn{
-    padding: 8px 16px;
+    padding: 10px 18px;
     font-size: 13px;
   }
 }
+
 
 
 
