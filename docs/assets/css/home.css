@@ -560,3 +560,59 @@ margin-top: -80px;
 .btn-main:hover {
   background: #185b3d;
 }
+
+/* ✅ HERO MOBILE FIX */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;     /* بدل row-reverse */
+    min-height: auto;
+    padding: 20px 16px 28px;
+    text-align: center;
+    gap: 14px;
+  }
+
+  .hero-image {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* صورة بشكل احترافي (Card) */
+  .hero-image img {
+    width: 92%;
+    max-width: 360px;
+    height: 210px;        /* مهم باش ما تبقاش طويلة بزاف */
+    object-fit: cover;    /* يعطي شكل احترافي */
+    border-radius: 18px;
+    box-shadow: 0 14px 35px rgba(0,0,0,.10);
+    display: block;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+    line-height: 1.35;
+    margin-bottom: 10px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .btn {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+}
