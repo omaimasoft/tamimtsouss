@@ -2,7 +2,60 @@ html, body {
   width: 100%;
   overflow-x: hidden;
 }
+/* ================= MOBILE & TABLET ================= */
+@media (max-width: 992px) {
 
+  .honey-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px 5px 20px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .honey-grid::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .honey-grid::-webkit-scrollbar-thumb {
+    background: #f2b705;
+    border-radius: 10px;
+  }
+
+  .honey-card {
+    min-width: 200px;
+    scroll-snap-align: center;
+    text-align: center;
+  }
+
+  /* تصغير الهكساغون */
+  .hexagon {
+    width: 85px;
+    height: 68px;
+    padding: 14px;
+  }
+
+  .hexagon span {
+    font-size: 14px;
+  }
+
+  /* العنوان */
+  .honey-card h3 {
+    font-size: 16px;
+  }
+
+  /* الوصف */
+  .honey-card p {
+    font-size: 13px;
+    min-height: auto;
+  }
+
+  /* الزر */
+  .btn-honey {
+    font-size: 12px;
+    padding: 6px 16px;
+  }
+}
 /* ================= HERO (DESKTOP) ================= */
 .hero{
   width: 100%;
@@ -35,83 +88,132 @@ html, body {
   padding-right: 8%;
 }
 
+/* ================= HERO (MOBILE) ✅ نسخة واحدة فقط ================= */
+@media (max-width: 768px){
+  .hero{
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 16px;
+    min-height: auto;
+    text-align: center;
+  }
+
+  .hero-image{
+    width: 100%;
+    justify-content: center;
+    margin: 0 0 12px 0;
+  }
+
+  .hero-image img{
+    width: 100%;
+    max-width: 420px;
+    height: auto;          /* ✅ ماشي 65vh */
+    max-height: 280px;
+    object-fit: contain;   /* ✅ ماشي cover */
+  }
+
+  .hero-content{
+    position: static;      /* ✅ ماشي absolute */
+    max-width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+
+  .hero-content h1{
+    font-size: 24px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+
+  .hero-content p{
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+  }
+
+  .hero-buttons{
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .btn{
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
+
 /* ================= BUTTONS ================= */
-.hero-buttons{
+.hero-buttons {
   display: flex;
   gap: 10px;
   justify-content: flex-start;
 }
 
-.btn{
+.btn {
   padding: 10px 22px;
   border-radius: 80px;
   font-size: 15px;
   text-decoration: none;
   transition: 0.3s ease;
 }
-/* ✅ Mobile Hero: شكل احترافي */
-@media (max-width: 768px){
-  .hero{
-    flex-direction: column;
-    align-items: center;
+
+.btn-primary {
+  background: #1f3d1b;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #163015;
+}
+
+.btn-secondary {
+  background: #f2b705;
+  color: #000;
+}
+
+.btn-secondary:hover {
+  background: #ffcc33;
+}
+
+/* ================= 📱 MOBILE ================= */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;   /* ⬅️ النص فوق، الصورة تحت */
     justify-content: center;
-    padding: 18px 14px 28px;
-    gap: 14px;
-    min-height: auto;
     text-align: center;
+    padding: 60px 20px;
   }
 
-  /* نحدد حجم منطقة الصورة */
-  .hero-image{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-  }
-
-  /* نخلي الصورة داخل كارد */
-  .hero-image img{
-    width: 100%;
-    max-width: 360px;
-    height: 310px;          /* ✅ بدل auto */
-    object-fit: cover;      /* ✅ يعطي شكل احترافي */
-    border-radius: 18px;    /* ✅ كارد */
-    box-shadow: 0 14px 35px rgba(0,0,0,.10);
-    background: #fff;
-  }
-
-  .hero-content{
-    max-width: 520px;
-    padding: 0;
+  .hero-content {
+    max-width: 100%;
+    padding-right: 0;
     text-align: center;
+    margin-bottom: 30px;
   }
 
-  .hero-content h1{
-    font-size: 26px;
-    line-height: 1.35;
-    margin: 6px 0 8px;
+  .hero-content h1 {
+    font-size: 30px;
   }
 
-  .hero-content p{
-    font-size: 14px;
-    line-height: 1.8;
-    margin: 0 0 14px;
-    color: #555;
+  .hero-content p {
+    font-size: 15px;
   }
 
-  .hero-buttons{
+  .hero-buttons {
     justify-content: center;
-    gap: 10px;
     flex-wrap: wrap;
   }
 
-  .btn{
-    padding: 10px 18px;
-    font-size: 13px;
+  .hero-image {
+    justify-content: center;
+  }
+
+  .hero-image img {
+    max-width: 90%;
+    max-height: 420px;
   }
 }
-
-
 
 
 .bee {
