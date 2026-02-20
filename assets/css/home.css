@@ -29,11 +29,10 @@ html, body{
 }
 
 /* نخلي النص مايمشيش بعيد بزاف */
-.hero-content{
-  width: 95%;
-  text-align: left;
-  margin-left: 0;
-  margin-right: auto;
+.hero{
+  display: flex;
+  flex-direction: row-reverse; /* هذا هو السر */
+  align-items: center;
 }
 
 /* Mobile */
