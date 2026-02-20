@@ -104,7 +104,6 @@ html, body{
 ========================= */
 @media (min-width: 1200px){
   .hero{
-    padding-left: 90%;
     background-size: 48% auto;
   }
 }
