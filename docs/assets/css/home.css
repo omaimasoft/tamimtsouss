@@ -31,8 +31,9 @@ html, body{
 /* نخلي النص مايمشيش بعيد بزاف */
 .hero-content{
   width: 95%;
-  text-align: right;
-  margin-left: 59px;
+  text-align: left;
+  margin-left: 0;
+  margin-right: auto;
 }
 
 /* Mobile */
