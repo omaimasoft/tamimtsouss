@@ -14,15 +14,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <!-- CSS العام -->
- <link rel="stylesheet" href="{{ '/assets/css/style.css'  | url }}">
-<link rel="stylesheet" href="{{ '/assets/css/navbar.css' | url }}">
-<link rel="stylesheet" href="{{ '/assets/css/footer.css' | url }}">
-
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/navbar.css">
+<link rel="stylesheet" href="/assets/css/footer.css">
   <!-- CSS خاص بالصفحات -->
   {% if css %}
     {% for file in css %}
-      <link rel="stylesheet" href="{{ file | url }}">
-    {% endfor %}
+<link rel="stylesheet" href="{{ file }}">    {% endfor %}
   {% endif %}
 
 </head>
@@ -39,6 +37,5 @@
 
   <!-- JS -->
 <script src="/assets/js/cart.js"></script>
-
 </body>
 </html>
