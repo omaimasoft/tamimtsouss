@@ -30,8 +30,7 @@ html, body{
 
 /* نخلي النص مايمشيش بعيد بزاف */
 .hero-content{
-  width: 55%;
-  max-width: 560px;
+  width: 95%;
   text-align: right;
   margin-left: 59px;
 }
