@@ -35,32 +35,48 @@ html, body{
   margin-left: -59px;
 }
 
-/* Mobile */
+/* =========================
+   Mobile (الهاتف) - نسخة نهائية
+========================= */
 @media (max-width: 768px){
   .hero{
-    min-height: 80vh;
-    padding: 40px 20px;
+    min-height: 92vh;
+    padding: 40px 18px;
     justify-content: center;
     text-align: center;
 
-    /* مهم: نحيد أي padding غير منطقي */
-    padding-left: 20px;
-    padding-right: 20px;
+    /* ماشي padding-right 150px */
+    padding-left: 18px;
+    padding-right: 18px;
 
     background:
-      linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
+      linear-gradient(rgba(255,255,255,0.72), rgba(255,255,255,0.72)),
       url("/assets/images/honey.png");
     background-size: cover;
-    background-position: center;
+    background-position: center bottom; /* باش تبان الصورة تحت شوية */
+    background-repeat: no-repeat;
   }
 
   .hero-content{
     width: 100%;
-    max-width: 100%;
+    max-width: 520px;
     text-align: center;
+    margin: 0 auto;   /* يوسّط المحتوى */
+  }
+
+  .hero-content h1{ font-size: 28px; margin-bottom: 10px; }
+  .hero-content p{ font-size: 14px; margin-bottom: 18px; }
+
+  .hero-buttons{
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .btn{
+    padding: 10px 18px;
+    font-size: 13px;
   }
 }
-
 
 .hero-content h1{
   font-size: 42px;
