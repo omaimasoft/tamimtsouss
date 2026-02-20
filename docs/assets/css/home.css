@@ -31,8 +31,9 @@ html, body{
 /* نخلي النص مايمشيش بعيد بزاف */
 .hero-content{
   width: 55%;
-  max-width: 1260px;
+  max-width: 560px;
   text-align: right;
+  margin-left: 59px;
 }
 
 /* Mobile */
