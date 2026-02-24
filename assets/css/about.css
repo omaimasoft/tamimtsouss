@@ -1,320 +1,223 @@
 /* =========================================
-   ABOUT PAGE - NEW STYLE (Arabic + Mobile)
+   ABOUT PAGE ONLY
+   (بدون أي تغيير للفوتر)
 ========================================= */
 
-:root{
-  --green: #1f6b43;
-  --green-dark: #155234;
-  --gold: #f2b705;
-  --gold-dark: #d89f00;
-  --cream: #fffdf7;
-  --soft: #f6f7f4;
-  --text: #222;
-  --muted: #666;
-  --white: #fff;
-
-  --radius-lg: 22px;
-  --radius-md: 14px;
-
-  --shadow-sm: 0 10px 25px rgba(0,0,0,.06);
-  --shadow-md: 0 18px 40px rgba(0,0,0,.08);
-}
-
-/* Reset خفيف */
-*{
-  box-sizing: border-box;
-}
-
-html, body{
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  background: #fff; /* حل الفوتر الرمادي */
-  color: var(--text);
-}
-
-/* =========================================
-   HERO
-========================================= */
-.about-hero{
+/* ---------- Hero ---------- */
+.about-hero {
   position: relative;
-  min-height: 48vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
   padding: 120px 6% 90px;
+  text-align: center;
   color: #fff;
-
   background:
-    linear-gradient(180deg, rgba(0,0,0,.60), rgba(0,0,0,.35)),
-    url("/assets/images/about-bees.jpg") center/cover no-repeat;
+    linear-gradient(180deg, rgba(0,0,0,.58), rgba(0,0,0,.32)),
+    url("/assets/images/about-bees.jpg") center / cover no-repeat;
+  overflow: hidden;
 }
 
-.about-hero::before{
+.about-hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 20%, rgba(242,183,5,.18), transparent 55%);
+  background: radial-gradient(circle at 50% 15%, rgba(242,183,5,.22), transparent 55%);
+  pointer-events: none;
 }
 
-.about-hero::after{
+.about-hero::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
   bottom: -1px;
   height: 70px;
-  background: linear-gradient(to top, var(--cream), transparent);
+  background: linear-gradient(to top, #fffdf7, transparent);
+  pointer-events: none;
 }
 
-.about-hero .hero-content{
+.about-hero .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 900px;
+  max-width: 850px;
+  margin: 0 auto;
 }
 
-.about-hero h1{
-  margin: 0 0 12px;
-  font-size: clamp(30px, 5vw, 52px);
+.about-hero h1 {
+  margin: 0 0 10px;
+  font-size: clamp(30px, 5vw, 50px);
   font-weight: 800;
   line-height: 1.2;
+  letter-spacing: .3px;
 }
 
-.about-hero p{
+.about-hero p {
   margin: 0 auto;
-  max-width: 720px;
-  font-size: clamp(15px, 2vw, 20px);
+  max-width: 700px;
+  font-size: clamp(15px, 2vw, 19px);
   line-height: 1.9;
   opacity: .95;
 }
 
-/* =========================================
-   ABOUT SECTION WRAPPER
-========================================= */
-.about-section{
-  background: var(--cream);
-  padding: 70px 6%;
+/* ---------- Main Section ---------- */
+.about-section {
+  background: #fffdf7;
+  padding: 65px 6%;
   display: grid;
-  gap: 26px;
+  gap: 24px;
 }
 
-/* =========================================
-   CARDS (General)
-========================================= */
-.about-card{
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  border: 1px solid rgba(31,107,67,.08);
-  box-shadow: var(--shadow-sm);
+/* ---------- Cards ---------- */
+.about-card {
+  background: #ffffff;
+  border: 1px solid rgba(31, 107, 67, 0.08);
+  border-radius: 22px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.05);
   padding: 26px;
-  transition: .28s ease;
+  transition: transform .28s ease, box-shadow .28s ease;
 }
 
-.about-card:hover{
+.about-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 16px 38px rgba(0,0,0,.08);
 }
 
-.about-card h2{
+.about-card h2 {
   margin: 0 0 14px;
-  color: var(--green);
-  font-size: clamp(22px, 3vw, 30px);
+  color: #1f6b43;
+  font-size: clamp(22px, 3vw, 28px);
   line-height: 1.35;
-  position: relative;
 }
 
-.about-card h2::after{
+.about-card h2::after {
   content: "";
   display: block;
   width: 68px;
   height: 4px;
   margin-top: 10px;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--gold), #ffd14b);
+  background: linear-gradient(90deg, #f2b705, #ffd24f);
 }
 
-.about-card p{
+.about-card p {
   margin: 0 0 10px;
-  color: var(--muted);
-  line-height: 2;
+  color: #666;
   font-size: 16px;
+  line-height: 2;
 }
 
-.about-card p:last-child{
+.about-card p:last-child {
   margin-bottom: 0;
 }
 
-.about-card strong{
-  color: var(--green-dark);
+.about-card strong {
+  color: #155234;
 }
 
-/* =========================================
-   CARD WITH IMAGE
-========================================= */
-.with-image{
+/* ---------- Card "with-image" (إذا أضفت صورة لاحقًا) ---------- */
+.with-image {
   display: grid;
-  grid-template-columns: 340px 1fr;
-  gap: 24px;
+  grid-template-columns: 1fr;
+  gap: 18px;
   align-items: center;
 }
 
-.about-image{
+/* هذه القواعد تعمل فقط إذا أضفت صورة داخل .with-image */
+.with-image .about-image {
   width: 100%;
 }
 
-.about-image img{
+.with-image .about-image img {
   width: 100%;
   height: 260px;
   object-fit: cover;
-  border-radius: 16px;
   display: block;
-  box-shadow: var(--shadow-sm);
+  border-radius: 16px;
   border: 1px solid rgba(0,0,0,.05);
+  box-shadow: 0 10px 28px rgba(0,0,0,.06);
 }
 
-.about-content{
+.with-image .about-content {
   text-align: right;
 }
 
-/* =========================================
-   OPTIONAL STATS / EXTRA (لو زدتيهم من بعد)
-========================================= */
-.about-badges{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 14px;
-}
-
-.about-badges span{
-  background: #f4f8f4;
-  color: var(--green);
-  border: 1px solid rgba(31,107,67,.12);
-  padding: 8px 12px;
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-/* =========================================
-   GALLERY
-========================================= */
-.about-gallery{
-  background: var(--soft);
-  padding: 75px 6%;
+/* ---------- Gallery ---------- */
+.about-gallery {
+  background: #f6f7f4;
+  padding: 70px 6%;
   text-align: center;
 }
 
-.about-gallery h2{
-  margin: 0 0 28px;
-  font-size: clamp(24px, 3vw, 34px);
-  color: var(--green);
+.about-gallery h2 {
+  margin: 0 0 26px;
+  color: #1f6b43;
+  font-size: clamp(24px, 3vw, 32px);
   line-height: 1.3;
 }
 
-.gallery-grid{
+.gallery-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
 }
 
-.gallery-grid img{
+.gallery-grid img {
   width: 100%;
   height: 220px;
   object-fit: cover;
   display: block;
   border-radius: 16px;
   border: 1px solid rgba(0,0,0,.04);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 10px 25px rgba(0,0,0,.05);
   transition: transform .25s ease, box-shadow .25s ease;
 }
 
-.gallery-grid img:hover{
+.gallery-grid img:hover {
   transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 14px 32px rgba(0,0,0,.08);
 }
 
-/* =========================================
-   FOOTER FIX (باش مايبانش رمادي)
-========================================= */
-footer,
-.site-footer,
-.footer,
-.main-footer{
-  background: #fff !important;
-  margin-top: 0 !important;
-}
-
-footer * ,
-.site-footer * ,
-.footer * ,
-.main-footer *{
-  background-color: transparent;
-}
-
-/* =========================================
-   RESPONSIVE - TABLET
-========================================= */
-@media (max-width: 992px){
-  .about-hero{
-    min-height: 42vh;
-    padding: 110px 5% 80px;
+/* ---------- Tablet ---------- */
+@media (max-width: 992px) {
+  .about-hero {
+    padding: 105px 5% 80px;
   }
 
-  .with-image{
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .about-image img{
-    height: 240px;
-    max-width: 560px;
-    margin: 0 auto;
-  }
-
-  .gallery-grid{
+  .gallery-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .about-card {
+    padding: 22px;
+  }
 }
 
-/* =========================================
-   RESPONSIVE - MOBILE
-========================================= */
-@media (max-width: 640px){
-  .about-hero{
-    padding: 95px 4% 70px;
-    min-height: 38vh;
+/* ---------- Mobile ---------- */
+@media (max-width: 640px) {
+  .about-hero {
+    padding: 90px 4% 68px;
   }
 
   .about-section,
-  .about-gallery{
+  .about-gallery {
     padding-left: 4%;
     padding-right: 4%;
   }
 
-  .about-card{
+  .about-card {
     padding: 18px 14px;
     border-radius: 16px;
   }
 
-  .about-card p{
+  .about-card p {
     font-size: 15px;
     line-height: 1.95;
   }
 
-  .about-image img{
-    height: 210px;
-    border-radius: 12px;
-  }
-
-  .gallery-grid{
+  .gallery-grid {
     grid-template-columns: 1fr;
     gap: 12px;
   }
 
-  .gallery-grid img{
+  .gallery-grid img {
     height: 210px;
     border-radius: 12px;
   }
