@@ -602,27 +602,21 @@ margin-top: -80px;
 }
 
 /* ================= HOME PACKAGES ================= */
-
-.home-packages {
-  padding: 100px 6%;
-  background: #f8f9f7;
-  text-align: center;
-}
-
-.packages-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-  margin-top: 50px;
-}
-
+/* ===== FIX: صور الباقات في الصفحة الرئيسية ===== */
 .package-card-home {
   background: #fff;
-  padding: 35px 25px;
+  padding: 20px;
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.05);
   transition: 0.3s ease;
   position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 420px; /* مهم باش الكروت يجيوا متناسقين */
 }
 
 .package-card-home:hover {
@@ -630,25 +624,51 @@ margin-top: -80px;
   box-shadow: 0 25px 50px rgba(0,0,0,0.08);
 }
 
-.package-card-home h3 {
-  color: #1f6f4a;
-  margin-bottom: 20px;
+/* هاد السطر هو الأهم */
+.package-card-home img {
+  width: 100%;
+  max-width: 240px;
+  height: 220px;
+  object-fit: contain;
+  display: block;
+  margin: 10px auto 15px;
+
+  /* كنلغيو أي ستايل قديم كيحرك الصورة */
+  position: static !important;
+  inset: auto !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  transform: none !important;
 }
 
-.package-card-home ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 20px 0;
-  line-height: 1.9;
-  color: #555;
+.package-info {
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+
+  /* كنلغيو أي absolute قديم */
+  position: static !important;
 }
 
 .package-card-home .price {
   font-size: 20px;
   font-weight: bold;
   color: #1f6f4a;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
+
+.btn-package {
+  display: inline-block;
+  padding: 12px 26px;
+  background: #f2b705;
+  color: #111;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
 
 .btn-package {
   display: inline-block;
@@ -698,10 +718,3 @@ margin-top: -80px;
   background: #185b3d;
 }
 
-.package-card-home img{
-  width: 100%;
-  height: 220px;
-  object-fit: contain;   /* باش الصورة ما تتقطعش */
-  display: block;
-  margin: 0 auto 15px;
-}
