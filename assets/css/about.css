@@ -1,224 +1,340 @@
 /* =========================================
-   ABOUT PAGE ONLY
-   (بدون أي تغيير للفوتر)
+   ABOUT PAGE - PREMIUM VERSION
+   (Page style only / no footer changes)
 ========================================= */
 
-/* ---------- Hero ---------- */
-.about-hero {
+:root{
+  --green: #1c6a43;
+  --green-dark: #124b2f;
+  --gold: #f2b705;
+  --gold-2: #ffd45a;
+  --cream: #fffdf8;
+  --soft: #f5f6f2;
+  --white: #ffffff;
+  --text: #222;
+  --muted: #666;
+  --line: rgba(0,0,0,.06);
+
+  --radius-xl: 26px;
+  --radius-lg: 20px;
+  --radius-md: 14px;
+
+  --shadow-1: 0 10px 30px rgba(0,0,0,.05);
+  --shadow-2: 0 18px 45px rgba(0,0,0,.08);
+  --shadow-3: 0 28px 70px rgba(0,0,0,.12);
+}
+
+/* Reset خفيف */
+*{ box-sizing: border-box; }
+
+html, body{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* ================= HERO ================= */
+.about-hero{
   position: relative;
-  padding: 120px 6% 90px;
+  min-height: 56vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  padding: 130px 6% 95px;
   color: #fff;
-  background:
-    linear-gradient(180deg, rgba(0,0,0,.58), rgba(0,0,0,.32)),
-    url("/assets/images/about-bees.jpg") center / cover no-repeat;
   overflow: hidden;
+
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.62), rgba(0,0,0,.28)),
+    url("/assets/images/about-bees.jpg") center / cover no-repeat;
 }
 
-.about-hero::before {
+/* توهج خفيف ذهبي */
+.about-hero::before{
   content: "";
   position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 15%, rgba(242,183,5,.22), transparent 55%);
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  top: -180px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(242,183,5,.28), rgba(242,183,5,0));
+  filter: blur(8px);
   pointer-events: none;
 }
 
-.about-hero::after {
+/* فاصل منحني */
+.about-hero::after{
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  height: 70px;
-  background: linear-gradient(to top, #fffdf7, transparent);
+  left: -5%;
+  right: -5%;
+  bottom: -45px;
+  height: 95px;
+  background: var(--cream);
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
   pointer-events: none;
 }
 
-.about-hero .hero-content {
+.about-hero .hero-content{
   position: relative;
   z-index: 2;
-  max-width: 850px;
+  max-width: 920px;
   margin: 0 auto;
 }
 
-.about-hero h1 {
-  margin: 0 0 10px;
-  font-size: clamp(30px, 5vw, 50px);
-  font-weight: 800;
-  line-height: 1.2;
-  letter-spacing: .3px;
+.about-hero h1{
+  margin: 0;
+  font-size: clamp(34px, 5vw, 58px);
+  font-weight: 900;
+  line-height: 1.15;
+  text-shadow: 0 8px 24px rgba(0,0,0,.2);
 }
 
-.about-hero p {
-  margin: 0 auto;
-  max-width: 700px;
-  font-size: clamp(15px, 2vw, 19px);
-  line-height: 1.9;
-  opacity: .95;
+.about-hero p{
+  margin: 14px auto 0;
+  max-width: 760px;
+  font-size: clamp(15px, 2vw, 20px);
+  line-height: 1.95;
+  opacity: .97;
 }
 
-/* ---------- Main Section ---------- */
-.about-section {
-  background: #fffdf7;
-  padding: 65px 6%;
+/* ================= MAIN SECTION ================= */
+.about-section{
+  position: relative;
+  background: var(--cream);
+  padding: 70px 6% 55px;
   display: grid;
   gap: 24px;
 }
 
-/* ---------- Cards ---------- */
-.about-card {
-  background: #ffffff;
-  border: 1px solid rgba(31, 107, 67, 0.08);
-  border-radius: 22px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.05);
-  padding: 26px;
-  transition: transform .28s ease, box-shadow .28s ease;
+/* ديكور خفيف */
+.about-section::before{
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  right: -90px;
+  top: 10px;
+  background: radial-gradient(circle, rgba(28,106,67,.08), rgba(28,106,67,0));
+  pointer-events: none;
 }
 
-.about-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 38px rgba(0,0,0,.08);
+/* ================= CARDS ================= */
+.about-card{
+  position: relative;
+  background: linear-gradient(180deg, #fff, #fffdf8);
+  border: 1px solid rgba(28,106,67,.08);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-1);
+  padding: 28px;
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  overflow: hidden;
 }
 
-.about-card h2 {
+.about-card::before{
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--gold), transparent);
+  opacity: .85;
+}
+
+.about-card:hover{
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-2);
+  border-color: rgba(242,183,5,.28);
+}
+
+.about-card h2{
   margin: 0 0 14px;
-  color: #1f6b43;
-  font-size: clamp(22px, 3vw, 28px);
+  color: var(--green);
+  font-size: clamp(22px, 3vw, 30px);
   line-height: 1.35;
+  letter-spacing: .2px;
 }
 
-.about-card h2::after {
+.about-card h2::after{
   content: "";
   display: block;
-  width: 68px;
+  width: 78px;
   height: 4px;
   margin-top: 10px;
   border-radius: 999px;
-  background: linear-gradient(90deg, #f2b705, #ffd24f);
+  background: linear-gradient(90deg, var(--gold), var(--gold-2));
+  box-shadow: 0 3px 10px rgba(242,183,5,.28);
 }
 
-.about-card p {
+.about-card p{
   margin: 0 0 10px;
-  color: #666;
+  color: var(--muted);
   font-size: 16px;
   line-height: 2;
 }
 
-.about-card p:last-child {
-  margin-bottom: 0;
+.about-card p:last-child{ margin-bottom: 0; }
+
+.about-card strong{
+  color: var(--green-dark);
 }
 
-.about-card strong {
-  color: #155234;
-}
-
-/* ---------- Card "with-image" (إذا أضفت صورة لاحقًا) ---------- */
-.with-image {
+/* ================= CARD WITH IMAGE ================= */
+/* حتى إذا ما كايناش صورة داخل .with-image، الستايل ما يختلش */
+.with-image{
   display: grid;
   grid-template-columns: 1fr;
   gap: 18px;
   align-items: center;
 }
 
-/* هذه القواعد تعمل فقط إذا أضفت صورة داخل .with-image */
-.with-image .about-image {
+/* إذا أضفتِ الصورة لاحقًا داخل .with-image */
+.with-image .about-image{
   width: 100%;
 }
 
-.with-image .about-image img {
+.with-image .about-image img{
   width: 100%;
-  height: 260px;
+  height: 280px;
   object-fit: cover;
   display: block;
-  border-radius: 16px;
-  border: 1px solid rgba(0,0,0,.05);
-  box-shadow: 0 10px 28px rgba(0,0,0,.06);
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-1);
 }
 
-.with-image .about-content {
+.with-image .about-content{
   text-align: right;
 }
 
-/* ---------- Gallery ---------- */
-.about-gallery {
-  background: #f6f7f4;
-  padding: 70px 6%;
+/* ================= GALLERY ================= */
+.about-gallery{
+  background:
+    linear-gradient(180deg, var(--soft), #f2f4ef);
+  padding: 72px 6% 80px;
   text-align: center;
+  position: relative;
 }
 
-.about-gallery h2 {
-  margin: 0 0 26px;
-  color: #1f6b43;
-  font-size: clamp(24px, 3vw, 32px);
-  line-height: 1.3;
+.about-gallery h2{
+  margin: 0 0 28px;
+  color: var(--green);
+  font-size: clamp(25px, 3vw, 34px);
+  line-height: 1.25;
 }
 
-.gallery-grid {
+.gallery-grid{
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
 }
 
-.gallery-grid img {
+/* شكل قوي للصور */
+.gallery-grid img{
   width: 100%;
-  height: 220px;
+  height: 230px;
   object-fit: cover;
   display: block;
-  border-radius: 16px;
-  border: 1px solid rgba(0,0,0,.04);
-  box-shadow: 0 10px 25px rgba(0,0,0,.05);
-  transition: transform .25s ease, box-shadow .25s ease;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.7);
+  box-shadow: var(--shadow-1);
+  transition: transform .28s ease, box-shadow .28s ease, filter .28s ease;
+  background: #fff;
 }
 
-.gallery-grid img:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 32px rgba(0,0,0,.08);
+.gallery-grid img:hover{
+  transform: translateY(-4px) scale(1.015);
+  box-shadow: var(--shadow-2);
+  filter: saturate(1.05);
 }
 
-/* ---------- Tablet ---------- */
-@media (max-width: 992px) {
-  .about-hero {
-    padding: 105px 5% 80px;
+/* تأثير بسيط: الصورة الأولى تكبر شوي فالديسكتوب */
+@media (min-width: 993px){
+  .gallery-grid img:first-child{
+    grid-column: span 2;
+    height: 230px;
+  }
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 992px){
+  .about-hero{
+    min-height: 48vh;
+    padding: 110px 5% 85px;
   }
 
-  .gallery-grid {
+  .about-section{
+    padding: 60px 5% 50px;
+  }
+
+  .about-card{
+    padding: 24px;
+    border-radius: 22px;
+  }
+
+  .gallery-grid{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .about-card {
-    padding: 22px;
+  .gallery-grid img:first-child{
+    grid-column: auto;
+  }
+
+  .gallery-grid img{
+    height: 220px;
   }
 }
 
-/* ---------- Mobile ---------- */
-@media (max-width: 640px) {
-  .about-hero {
-    padding: 90px 4% 68px;
+/* ================= MOBILE ================= */
+@media (max-width: 640px){
+  .about-hero{
+    min-height: 42vh;
+    padding: 92px 4% 70px;
   }
 
-  .about-section,
-  .about-gallery {
-    padding-left: 4%;
-    padding-right: 4%;
+  .about-hero::after{
+    bottom: -35px;
+    height: 75px;
   }
 
-  .about-card {
+  .about-section{
+    padding: 52px 4% 42px;
+    gap: 16px;
+  }
+
+  .about-card{
     padding: 18px 14px;
     border-radius: 16px;
   }
 
-  .about-card p {
+  .about-card h2{
+    font-size: 22px;
+  }
+
+  .about-card p{
     font-size: 15px;
     line-height: 1.95;
   }
 
-  .gallery-grid {
+  .with-image .about-image img{
+    height: 220px;
+    border-radius: 14px;
+  }
+
+  .about-gallery{
+    padding: 55px 4% 60px;
+  }
+
+  .gallery-grid{
     grid-template-columns: 1fr;
     gap: 12px;
   }
 
-  .gallery-grid img {
+  .gallery-grid img{
     height: 210px;
-    border-radius: 12px;
+    border-radius: 14px;
   }
 }
