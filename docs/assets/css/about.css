@@ -33,23 +33,75 @@ html, body{
   overflow-x: hidden;
 }
 
-/* ================= HERO ================= */
+/* ================= HERO FIX ================= */
 .about-hero{
   position: relative;
-  min-height: 56vh;
+  min-height: 48vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 130px 6% 95px;
+  padding: 110px 6% 85px;
   color: #fff;
   overflow: hidden;
-margin-top: 20px;
+
   background:
     linear-gradient(180deg, rgba(0,0,0,.62), rgba(0,0,0,.28)),
     url("/assets/images/about-bees.jpg") center / cover no-repeat;
 }
 
+.about-hero .hero-content{
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Reset قوي لعنوان الصفحة فقط */
+.about-hero h1{
+  margin: 0 0 12px !important;
+  padding: 0 !important;
+  font-size: clamp(30px, 5vw, 52px) !important;
+  line-height: 1.2 !important;
+  font-weight: 800;
+  transform: none !important;
+  position: static !important;
+  top: auto !important;
+}
+
+.about-hero p{
+  margin: 0 auto !important;
+  font-size: clamp(15px, 2vw, 20px);
+  line-height: 1.9;
+  max-width: 760px;
+  opacity: .95;
+}
+
+/* الفاصل السفلي */
+.about-hero::after{
+  content: "";
+  position: absolute;
+  left: -5%;
+  right: -5%;
+  bottom: -35px;
+  height: 80px;
+  background: #fffdf7;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  z-index: 1;
+}
+
+/* موبايل */
+@media (max-width: 640px){
+  .about-hero{
+    min-height: 40vh;
+    padding: 90px 4% 65px;
+  }
+
+  .about-hero::after{
+    bottom: -28px;
+    height: 60px;
+  }
+}
 /* توهج خفيف ذهبي */
 .about-hero::before{
   content: "";
