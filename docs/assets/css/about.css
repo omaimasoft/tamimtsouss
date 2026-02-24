@@ -44,7 +44,7 @@ html, body{
   padding: 130px 6% 95px;
   color: #fff;
   overflow: hidden;
-
+margin-top: 20px;
   background:
     linear-gradient(180deg, rgba(0,0,0,.62), rgba(0,0,0,.28)),
     url("/assets/images/about-bees.jpg") center / cover no-repeat;
