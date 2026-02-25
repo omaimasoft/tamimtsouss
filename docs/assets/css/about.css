@@ -34,23 +34,7 @@ html, body{
   overflow-x: hidden;
 }
 
-/* ================= HERO ================= */
-.about-hero{
-  position: relative;
-  min-height: 52vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 190px 6% 90px;
-  color: #fff;
-  overflow: hidden;
-  isolation: isolate;
 
-  background:
-    linear-gradient(180deg, rgba(0,0,0,.62), rgba(0,0,0,.28)),
-    url("/assets/images/about-bees.jpg") center / cover no-repeat;
-}
 
 /* إذا بقي div.about-image الفارغ داخل الـHero نخبيه */
 .about-hero .about-image{
