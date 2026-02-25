@@ -67,8 +67,8 @@
   "name": "أملو باللوز",
   "category": "amlo",
   "image": "/assets/images/amlo-almond.png",
-  "old_price": 150,
-  "price": 120,
+  "old_price": 180,
+  "price": 150,
   "description": "أملو مغربي أصلي مصنوع من زيت أركان واللوز المحمص والعسل الطبيعي، بطعم غني وقيمة غذائية عالية."
 }
 ,
@@ -104,8 +104,8 @@
     "name": "زعفران بلدي أصلي",
     "category": "others",
     "image": "/assets/images/saffron.png",
-    "old_price": 250,
-    "price": 220,
+    "old_price": 50,
+    "price": 35,
     "description": "زعفران مغربي أصلي بلون قوي ورائحة زكية."
   }
 ]
