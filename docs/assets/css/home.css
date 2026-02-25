@@ -144,9 +144,6 @@ html, body{
   }
 }
 
-/* =========================
-   Mobile
-========================= */
 @media (max-width: 768px){
   .hero{
     min-height: 88vh;
@@ -155,25 +152,32 @@ html, body{
     text-align: center;
   }
 
-  /* الصورة كتولي لتحت باش ما تحجبش النص */
-  .hero::before{
-    left: 50%;
-    top: auto;
-    bottom: 18px;
-    transform: translateX(-50%);
-    width: min(88vw, 360px);
-    height: 36%;
-    opacity: 0.22;
-    background-position: center bottom;
-  }
-
+  /* الطبقة البيضاء تكون تحت الصورة */
   .hero::after{
+    z-index: 0;
     background:
-      linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.90)),
+      linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,255,255,0.82)),
       radial-gradient(circle at 50% 85%, rgba(242,183,5,0.08), transparent 45%);
   }
 
+  /* الصورة تكون فوق الطبقة وتبان */
+  .hero::before{
+    z-index: 1;
+    left: 50%;
+    top: auto;
+    bottom: 10px;
+    transform: translateX(-50%);
+    width: min(88vw, 360px);
+    height: 42%;              /* كانت 36% */
+    opacity: 0.55;            /* كانت 0.22 */
+    background-position: center bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
   .hero .hero-content{
+    position: relative;
+    z-index: 2;
     width: 100%;
     max-width: 520px;
     margin: 0 auto;
@@ -193,7 +197,7 @@ html, body{
   }
 
   .hero .hero-content p br{
-    display: none; /* نشد النص فالهاتف */
+    display: none;
   }
 
   .hero .hero-buttons{
@@ -206,21 +210,10 @@ html, body{
     font-size: 13px;
   }
 }
-
 /* =========================
    Large Desktop (اختياري)
 ========================= */
-@media (min-width: 1400px){
-  .hero{
-    min-height: 78vh;
-    padding-inline: 9%;
-  }
 
-  .hero::before{
-    width: min(46vw, 700px);
-    height: min(82%, 560px);
-  }
-}
 /* =========================================
    HONEY GRID (Desktop Grid / Mobile Scroll)
 ========================================= */
