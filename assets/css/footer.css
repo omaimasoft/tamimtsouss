@@ -229,3 +229,16 @@
   margin: 6px 0;
 }
 
+.dev-link{
+  display:inline-flex;
+  align-items:center;
+  padding:6px 12px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:800;
+  color:#fff;
+  background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.28);
+  transition:.2s;
+}
+.dev-link:hover{ background:rgba(255,255,255,.28); transform:translateY(-1px); }
