@@ -1,16 +1,16 @@
 /* =========================
-   FOOTER PREMIUM (RTL + Responsive)
+   FOOTER PREMIUM (RTL + Responsive) - FINAL CLEAN
 ========================= */
 
 .footer-premium{
   position: relative;
-  padding: 54px 0 0;  /* ✅ مهم: بلا padding جانبي */
+  padding: 54px 0 0;                 /* ✅ Full width */
   color: rgba(255,255,255,.92);
   overflow: hidden;
   background: linear-gradient(135deg, #0f4a2e 0%, #2f6b2a 40%, #c88a1a 100%);
 }
 
-/* طبقة خفيفة كتخلي الخلفية ناعمة */
+/* Soft overlay */
 .footer-premium::before{
   content:"";
   position:absolute;
@@ -24,17 +24,19 @@
   opacity: .9;
 }
 
+/* Inner layout */
 .footer-inner{
   position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 8% 28px;                /* ✅ padding داخل المحتوى */
   display: grid;
   grid-template-columns: 1.35fr 1fr 1fr 1.15fr;
   gap: 28px;
   align-items: start;
-
-  padding: 0 8% 28px;   /* ✅ هنا نديرو padding */
 }
 
-/* ===== Titles ===== */
+/* Titles */
 .footer-premium h4{
   margin: 0 0 12px;
   color: #fff;
@@ -43,7 +45,6 @@
   position: relative;
   display: inline-block;
 }
-
 .footer-premium h4::after{
   content:"";
   display:block;
@@ -54,7 +55,7 @@
   border-radius: 999px;
 }
 
-/* ===== Brand ===== */
+/* Brand */
 .footer-brand{ max-width: 520px; }
 
 .footer-logo{
@@ -67,7 +68,6 @@
   border: 1px solid rgba(255,255,255,.18);
   backdrop-filter: blur(6px);
 }
-
 .footer-logo img{
   width: 100%;
   height: auto;
@@ -82,13 +82,12 @@
   font-size: 14px;
 }
 
-/* ===== Social ===== */
+/* Social */
 .footer-social{
   display:flex;
   gap: 10px;
   flex-wrap: wrap;
 }
-
 .footer-social a{
   width: 40px;
   height: 40px;
@@ -102,19 +101,17 @@
   border: 1px solid rgba(255,255,255,.18);
   transition: .2s ease;
 }
-
 .footer-social a:hover{
   transform: translateY(-2px);
   background: rgba(255,255,255,.20);
 }
 
-/* ===== Links columns ===== */
+/* Links */
 .footer-links ul{
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 .footer-links li{ margin-bottom: 10px; }
 
 .footer-links a{
@@ -123,13 +120,12 @@
   font-weight: 600;
   transition: .2s ease;
 }
-
 .footer-links a:hover{
   color:#fff;
   text-decoration: underline;
 }
 
-/* ===== Contact ===== */
+/* Contact */
 .footer-contact .contact-item{
   display:flex;
   align-items: center;
@@ -137,7 +133,6 @@
   margin-bottom: 12px;
   line-height: 1.7;
 }
-
 .footer-contact .contact-icon{
   width: 40px;
   height: 40px;
@@ -148,45 +143,41 @@
   border: 1px solid rgba(255,255,255,.18);
   flex: 0 0 auto;
 }
-
 .footer-contact a{
   color: rgba(255,255,255,.92);
   text-decoration: none;
   font-weight: 700;
 }
-
 .footer-contact a:hover{
   color: #fff;
   text-decoration: underline;
 }
-
-/* رقم الهاتف يبقى لليسار */
 .footer-premium .phone{
   direction: ltr;
   unicode-bidi: plaintext;
   display: inline-block;
 }
 
-.footer-premium .contact-links{
-  display:flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-/* ===== Bottom bar ===== */
+/* =========================
+   Bottom bar (FULL WIDTH) ✅
+========================= */
 .footer-bottom{
-  position: relative;
+  width: 100%;
   border-top: 1px solid rgba(255,255,255,.18);
+  background: rgba(0,0,0,.14);
   padding: 16px 0;
-  background: rgba(0,0,0,.10);
 }
 
 .footer-bottom-inner{
-  display:flex;
-  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 8%;
+  display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  gap: 14px;
   flex-wrap: wrap;
+  text-align: center;
 }
 
 .footer-bottom p{
@@ -195,10 +186,18 @@
   color: rgba(255,255,255,.88);
 }
 
+.footer-credit{
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .dev-link{
   display:inline-flex;
   align-items:center;
-  padding: 6px 12px;
+  padding: 4px 10px;
+  font-size: 13px;
   border-radius: 999px;
   text-decoration:none;
   font-weight: 900;
@@ -215,100 +214,26 @@
 /* =========================
    Responsive
 ========================= */
-
-/* Tablet */
 @media (max-width: 992px){
-  .footer-premium{ padding: 44px 6% 0; }
   .footer-inner{
+    padding: 0 6% 24px;
     grid-template-columns: 1.2fr 1fr;
     gap: 22px;
   }
+  .footer-bottom-inner{ padding: 0 6%; }
 }
 
-/* Mobile */
 @media (max-width: 768px){
-  .footer-premium{ padding: 40px 5% 0; }
   .footer-inner{
+    padding: 0 5% 22px;
     grid-template-columns: 1fr;
     gap: 18px;
     text-align: center;
   }
 
-  .footer-logo{
-    margin-inline: auto;
-  }
+  .footer-logo{ margin-inline: auto; }
+  .footer-social{ justify-content: center; }
+  .footer-contact .contact-item{ justify-content: center; }
 
-  .footer-social{
-    justify-content: center;
-  }
-
-  .footer-contact .contact-item{
-    justify-content: center;
-  }
-
-  .footer-contact .contact-links{
-    align-items: center;
-  }
-
-  .footer-bottom-inner{
-    justify-content: center;
-    text-align: center;
-  }
-}
-
-
-/* ===== Fix footer bottom layout (RTL friendly) ===== */
-.footer-bottom{
-  padding: 16px 8%;          /* نفس padding ديال الفوتر */
-  background: rgba(0,0,0,.10);
-}
-
-/* ✅ Bottom bar FULL WIDTH fix */
-.footer-bottom{
-  width: 100%;
-  padding: 16px 0 !important;              /* بلا padding جانبي */
-  background: rgba(0,0,0,.14) !important;  /* لون موحد */
-  border-top: 1px solid rgba(255,255,255,.18);
-}
-
-.footer-bottom-inner{
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 8% !important;                /* padding داخل المحتوى فقط */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  flex-wrap: wrap;
-  text-align: center;
-  background: transparent !important;
-}
-
-
-.footer-credit{
-  margin: 0;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-/* خففي شكل dev-link باش مايبانش بحال “زر كبير” */
-.footer-credit .dev-link{
-  padding: 4px 10px;
-  font-size: 13px;
-  border-radius: 999px;
-  background: rgba(255,255,255,.14);
-  border: 1px solid rgba(255,255,255,.18);
-  color: #fff;
-  text-decoration: none;
-}
-
-@media (max-width: 992px){
-  .footer-inner{ padding: 0 6% 24px; grid-template-columns: 1.2fr 1fr; gap: 22px; }
-  .footer-bottom-inner{ padding: 0 6% !important; }
-}
-
-@media (max-width: 768px){
-  .footer-inner{ padding: 0 5% 22px; grid-template-columns: 1fr; gap: 18px; text-align:center; }
-  .footer-bottom-inner{ padding: 0 5% !important; }
+  .footer-bottom-inner{ padding: 0 5%; }
 }
