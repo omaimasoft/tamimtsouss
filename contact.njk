@@ -16,20 +16,32 @@ css:
 
 <!-- ================= CONTACT ================= -->
 <section class="contact-section">
+
+  <!-- الفورم -->
+  <div class="contact-form">
+    <h2>أرسل رسالة</h2>
+
 <form
   id="contactForm"
   action="https://formspree.io/f/mgolqono"
   method="POST"
 >
-  <!-- عنوان واضح للإيميل -->
   <input type="hidden" name="_subject" value="رسالة جديدة من موقع TamimtSouss">
-
-  <!-- anti-spam (خليه مخفي) -->
   <input type="text" name="_gotcha" style="display:none">
 
-  <input type="text" name="name" placeholder="الاسم الكامل" required>
+  <input
+    type="text"
+    name="name"
+    placeholder="الاسم الكامل"
+    required
+  >
 
-  <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+  <input
+    type="email"
+    name="email"
+    placeholder="البريد الإلكتروني"
+    required
+  >
 
   <input
     type="tel"
@@ -39,15 +51,18 @@ css:
     required
   >
 
-  <textarea name="message" placeholder="رسالتك" required></textarea>
-  
-      <button type="submit">إرسال</button>
+  <textarea
+    name="message"
+    placeholder="رسالتك"
+    required
+  ></textarea>
 
-      <!-- رسالة النجاح -->
-      <div class="form-success" style="display:none;">
-         تم إرسال رسالتك بنجاح، سنقوم بالرد عليك في أقرب وقت
-      </div>
-    </form>
+  <button type="submit">إرسال</button>
+
+  <div class="form-success" style="display:none;">
+    تم إرسال رسالتك بنجاح، سنقوم بالرد عليك في أقرب وقت
+  </div>
+</form>
   </div>
 
   <!-- معلومات التواصل -->
