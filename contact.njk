@@ -16,44 +16,31 @@ css:
 
 <!-- ================= CONTACT ================= -->
 <section class="contact-section">
+<form
+  id="contactForm"
+  action="https://formspree.io/f/mgolqono"
+  method="POST"
+>
+  <!-- عنوان واضح للإيميل -->
+  <input type="hidden" name="_subject" value="رسالة جديدة من موقع TamimtSouss">
 
-  <!-- الفورم -->
-  <div class="contact-form">
-    <h2>أرسل رسالة</h2>
+  <!-- anti-spam (خليه مخفي) -->
+  <input type="text" name="_gotcha" style="display:none">
 
-    <form
-      id="contactForm"
-      action="https://formspree.io/f/mzdazarp"
-      method="POST"
-    >
-      <input
-        type="text"
-        name="name"
-        placeholder="الاسم الكامل"
-        required
-      >
+  <input type="text" name="name" placeholder="الاسم الكامل" required>
 
-      <input
-        type="email"
-        name="email"
-        placeholder="البريد الإلكتروني"
-        required
-      >
+  <input type="email" name="email" placeholder="البريد الإلكتروني" required>
 
-      <input
-        type="tel"
-        name="phone"
-        placeholder="رقم الهاتف"
-        pattern="^\+?[0-9\s]{9,15}$"
-        required
-      >
+  <input
+    type="tel"
+    name="phone"
+    placeholder="رقم الهاتف"
+    pattern="^\+?[0-9\s]{9,15}$"
+    required
+  >
 
-      <textarea
-        name="message"
-        placeholder="رسالتك"
-        required
-      ></textarea>
-
+  <textarea name="message" placeholder="رسالتك" required></textarea>
+  
       <button type="submit">إرسال</button>
 
       <!-- رسالة النجاح -->
@@ -75,10 +62,11 @@ css:
 <div class="contact-item">
   <i class="fa-solid fa-phone"></i>
   <div class="contact-links">
-    <a href="tel:+212763538294">0763538294 +212</a>
-    <a href="tel:+212770898635"> 0770898635 +212</a>
+    <a href="tel:+212763538294" dir="ltr">+212 763 538 294</a>
+<a href="tel:+212770898635" dir="ltr">+212 770 898 635</a>
   </div>
 </div>
+
 
 <div class="contact-item">
   <i class="fa-solid fa-envelope"></i>
