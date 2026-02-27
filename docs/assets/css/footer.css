@@ -228,74 +228,93 @@
 
 
 /* =========================
-   FEATURES BAR (Light + One Color)
+   Simple Features Bar (like screenshot)
 ========================= */
 .features-bar{
-  padding: 18px 8%;
-  background: #f7f9f7;              /* لون واحد خفيف */
-  border-top: 1px solid #e9eee9;
-  border-bottom: 1px solid #e9eee9;
+  background: #f7f5ee;                 /* لون واحد خفيف */
+  border-top: 1px solid #e9e3d6;
+  border-bottom: 1px solid #e9e3d6;
+  padding: 14px 8%;
 }
 
 .features-container{
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
+  display: flex;
+  align-items: stretch;
 }
 
 .feature-item{
-  display: grid;
-  grid-template-columns: 34px 1fr;
-  align-items: center;
-  gap: 10px;
+  flex: 1;
+  text-align: center;
+  padding: 10px 8px;
+  position: relative;
+}
 
-  padding: 12px 14px;
-  border-radius: 14px;
-  border: 1px solid #e9eee9;
-  background: transparent;          /* خفيف */
+/* فواصل بسيطة بين العناصر */
+.feature-item + .feature-item{
+  border-inline-start: 1px solid rgba(0,0,0,0.08);
 }
 
 .feature-item i{
+  display: inline-grid;
+  place-items: center;
   width: 34px;
   height: 34px;
-  border-radius: 10px;
-  display: grid;
-  place-items: center;
-
+  border-radius: 50%;
+  background: rgba(31,93,58,.08);      /* نفس اللون ولكن فاتح */
+  color: #1f5d3a;
   font-size: 18px;
-  color: #1f5d3a;                   /* لون واحد */
-  background: rgba(31,93,58,.08);   /* نفس اللون لكن فاتح */
+  margin-bottom: 6px;
 }
 
 .feature-item h4{
-  margin: 0 0 3px;
-  font-size: 14px;
+  margin: 0 0 2px;
+  font-size: 13px;
   font-weight: 800;
-  color: #1f5d3a;                   /* نفس اللون */
+  color: #1f5d3a;
 }
 
 .feature-item p{
   margin: 0;
-  font-size: 12.5px;
-  line-height: 1.5;
-  color: #555;
+  font-size: 11.5px;
+  color: #666;
+  line-height: 1.4;
 }
 
-/* Tablet */
+/* ===== Tablet ===== */
 @media (max-width: 992px){
-  .features-bar{ padding: 16px 6%; }
-  .features-container{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+  .features-bar{ padding: 12px 6%; }
+  .feature-item p{ font-size: 11px; }
 }
 
-/* Mobile */
+/* ===== Mobile (مرتب وهادئ) ===== */
 @media (max-width: 768px){
-  .features-bar{ padding: 14px 5%; }
+  .features-bar{ padding: 12px 5%; }
+
   .features-container{
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
   }
+
+  .feature-item{
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 12px;
+    padding: 12px 10px;
+    background: rgba(255,255,255,0.35);
+  }
+
+  .feature-item + .feature-item{
+    border-inline-start: none; /* نحيد الفواصل */
+  }
+
+  .feature-item p{
+    display: none; /* باش يبقى بسيط فالهاتف بحال الصورة */
+  }
+}
+
+/* Small mobile */
+@media (max-width: 420px){
+  .features-container{ grid-template-columns: 1fr; }
 }
