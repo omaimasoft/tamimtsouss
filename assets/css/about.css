@@ -1,351 +1,214 @@
-/* =========================================
-   ABOUT PAGE - CLEAN RESPONSIVE VERSION
-   (Page style only / no footer styles)
-========================================= */
+/* =========================
+   ABOUT PAGE (Professional)
+========================= */
 
-:root{
-  --green: #1c6a43;
-  --green-dark: #124b2f;
-  --gold: #f2b705;
-  --gold-2: #ffd45a;
-  --cream: #fffdf8;
-  --soft: #f5f6f2;
-  --white: #ffffff;
-  --text: #222;
-  --muted: #666;
-  --line: rgba(0,0,0,.06);
+*,
+*::before,
+*::after { box-sizing: border-box; }
 
-  --radius-xl: 26px;
-  --radius-lg: 20px;
-  --radius-md: 14px;
-
-  --shadow-1: 0 10px 30px rgba(0,0,0,.05);
-  --shadow-2: 0 18px 45px rgba(0,0,0,.08);
+.about-hero{
+  padding: 120px 8% 70px;
+  background:
+    linear-gradient(135deg, rgba(31,93,58,.88), rgba(200,138,26,.60)),
+    url("/assets/images/honey-1.png");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Reset خفيف */
-*{
-  box-sizing: border-box;
-}
-
-html, body{
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
-
-
-/* إذا بقي div.about-image الفارغ داخل الـHero نخبيه */
-.about-hero .about-image{
-  display: none;
-}
-
-/* توهج ذهبي خفيف */
-.about-hero::before{
-  content: "";
-  position: absolute;
-  width: 520px;
-  height: 520px;
-  border-radius: 50%;
-  top: -180px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: radial-gradient(circle, rgba(242,183,5,.28), rgba(242,183,5,0));
-  filter: blur(8px);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* فاصل منحني */
 .about-hero::after{
-  content: "";
-  position: absolute;
-  left: -5%;
-  right: -5%;
-  bottom: -42px;
-  height: 90px;
-  background: var(--cream);
-  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-  pointer-events: none;
-  z-index: 1;
+  content:"";
+  position:absolute;
+  inset:-40px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,.22), transparent 55%),
+    radial-gradient(circle at 80% 35%, rgba(255,255,255,.14), transparent 60%),
+    radial-gradient(circle at 50% 90%, rgba(0,0,0,.18), transparent 60%);
+  pointer-events:none;
 }
 
 .about-hero .hero-content{
   position: relative;
-  z-index: 2;
-  max-width: 920px;
+  max-width: 900px;
   margin: 0 auto;
+  text-align: center;
+  padding: 18px 16px;
 }
 
-/* reset قوي لعنوان الـ Hero فقط */
 .about-hero h1{
-  margin: 0 0 12px !important;
-  padding: 0 !important;
-  font-size: clamp(30px, 5vw, 56px) !important;
-  font-weight: 900 !important;
-  line-height: 1.18 !important;
-  letter-spacing: 0;
-  position: static !important;
-  top: auto !important;
-  transform: none !important;
-  text-shadow: 0 8px 24px rgba(0,0,0,.2);
+  margin: 0 0 10px;
+  font-size: clamp(28px, 3.2vw, 44px);
+  font-weight: 900;
+  letter-spacing: .2px;
 }
 
 .about-hero p{
-  margin: 0 auto !important;
-  max-width: 760px;
-  font-size: clamp(15px, 2vw, 20px);
+  margin: 0 auto;
+  max-width: 720px;
   line-height: 1.9;
-  opacity: .97;
+  font-size: 16px;
+  opacity: .95;
 }
 
-/* ================= MAIN SECTION ================= */
+/* ===== Section wrapper ===== */
 .about-section{
-  position: relative;
-  background: var(--cream);
-  padding: 64px 6% 52px;
+  padding: 70px 8%;
+  background: #fdfbf7;
   display: grid;
   gap: 22px;
 }
 
-/* ديكور خفيف */
-.about-section::before{
-  content: "";
-  position: absolute;
-  width: 240px;
-  height: 240px;
-  border-radius: 50%;
-  right: -90px;
-  top: 10px;
-  background: radial-gradient(circle, rgba(28,106,67,.08), rgba(28,106,67,0));
-  pointer-events: none;
-}
-
-/* ================= CARDS ================= */
+/* ===== Card base ===== */
 .about-card{
-  position: relative;
-  background: linear-gradient(180deg, #fff, #fffdf8);
-  border: 1px solid rgba(28,106,67,.08);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-1);
-  padding: 26px;
-  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
-  overflow: hidden;
-}
-
-.about-card::before{
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 4px;
-  background: linear-gradient(180deg, var(--gold), transparent);
-  opacity: .9;
-}
-
-.about-card:hover{
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-2);
-  border-color: rgba(242,183,5,.25);
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 18px;
+  box-shadow: 0 12px 34px rgba(0,0,0,.06);
+  padding: 26px 24px;
 }
 
 .about-card h2{
-  margin: 0 0 14px;
-  color: var(--green);
-  font-size: clamp(22px, 3vw, 30px);
-  line-height: 1.35;
-}
-
-.about-card h2::after{
-  content: "";
-  display: block;
-  width: 78px;
-  height: 4px;
-  margin-top: 10px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--gold), var(--gold-2));
-  box-shadow: 0 3px 10px rgba(242,183,5,.25);
+  margin: 0 0 12px;
+  font-size: 20px;
+  color: #1f5d3a;
+  font-weight: 900;
 }
 
 .about-card p{
-  margin: 0 0 10px;
-  color: var(--muted);
-  font-size: 16px;
-  line-height: 2;
+  margin: 0 0 12px;
+  color: #444;
+  line-height: 1.9;
+  font-size: 15px;
 }
+.about-card p:last-child{ margin-bottom: 0; }
 
-.about-card p:last-child{
-  margin-bottom: 0;
-}
-
-.about-card strong{
-  color: var(--green-dark);
-}
-
-/* ================= CARD WITH IMAGE ================= */
-/* حالياً كيبقى منظم حتى بلا صورة */
-.with-image{
+/* ===== Card with image layout ===== */
+.about-card.with-image{
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1.1fr 1fr; /* image | text (RTL friendly) */
   gap: 18px;
   align-items: center;
 }
 
-.with-image .about-image{
-  width: 100%;
+.about-card.with-image .about-image{
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  background: #f6f6f6;
+  aspect-ratio: 4 / 3;
 }
 
-.with-image .about-image img{
+.about-card.with-image .about-image img{
   width: 100%;
-  height: 280px;
+  height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 18px;
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow-1);
 }
 
-.with-image .about-content{
-  text-align: right;
+/* ===== Small highlights (optional) ===== */
+.about-highlights{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
 }
 
-/* ================= GALLERY ================= */
-.about-gallery{
-  background: linear-gradient(180deg, var(--soft), #f2f4ef);
-  padding: 70px 6% 78px;
+.highlight{
+  background: linear-gradient(180deg, #fff, #fbfbfb);
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 16px 14px;
+  box-shadow: 0 10px 26px rgba(0,0,0,.04);
   text-align: center;
-  position: relative;
+}
+
+.highlight .num{
+  font-size: 22px;
+  font-weight: 900;
+  color: #c88a1a;
+  margin-bottom: 6px;
+}
+
+.highlight .label{
+  color: #555;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ===== Gallery ===== */
+.about-gallery{
+  padding: 0 8% 85px;
+  background: #fdfbf7;
 }
 
 .about-gallery h2{
-  margin: 0 0 26px;
-  color: var(--green);
-  font-size: clamp(24px, 3vw, 34px);
-  line-height: 1.25;
+  text-align: center;
+  margin: 10px 0 18px;
+  color: #1f5d3a;
+  font-weight: 900;
+  font-size: clamp(20px, 2.2vw, 28px);
 }
 
 .gallery-grid{
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
+  gap: 14px;
 }
 
 .gallery-grid img{
   width: 100%;
-  height: 230px;
+  height: 220px;
   object-fit: cover;
-  display: block;
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.7);
-  box-shadow: var(--shadow-1);
-  transition: transform .28s ease, box-shadow .28s ease, filter .28s ease;
-  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #eee;
+  box-shadow: 0 12px 28px rgba(0,0,0,.06);
+  transition: transform .2s ease, box-shadow .2s ease;
 }
 
-.gallery-grid img:hover{
-  transform: translateY(-4px) scale(1.01);
-  box-shadow: var(--shadow-2);
-  filter: saturate(1.05);
-}
-
-/* Desktop: الصورة الأولى أعرض قليلاً */
-@media (min-width: 993px){
-  .gallery-grid img:first-child{
-    grid-column: span 2;
+@media (hover:hover){
+  .gallery-grid img:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 16px 34px rgba(0,0,0,.10);
   }
 }
 
-/* ================= TABLET ================= */
+/* ===== Tablet ===== */
 @media (max-width: 992px){
-  .about-hero{
-    min-height: 46vh;
-    padding: 105px 5% 80px;
-  }
+  .about-hero{ padding: 110px 6% 60px; }
+  .about-section{ padding: 60px 6%; }
+  .about-gallery{ padding: 0 6% 75px; }
 
-  .about-hero::after{
-    bottom: -34px;
-    height: 78px;
-  }
-
-  .about-section{
-    padding: 56px 5% 46px;
-  }
-
-  .about-card{
-    padding: 22px;
-    border-radius: 22px;
+  .about-card.with-image{
+    grid-template-columns: 1fr;
   }
 
   .gallery-grid{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  .gallery-grid img{ height: 200px; }
 
-  .gallery-grid img:first-child{
-    grid-column: auto;
-  }
-
-  .gallery-grid img{
-    height: 220px;
+  .about-highlights{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-/* ================= MOBILE ================= */
-@media (max-width: 640px){
-  .about-hero{
-    min-height: 40vh;
-    padding: 88px 4% 64px;
-  }
+/* ===== Mobile ===== */
+@media (max-width: 768px){
+  .about-hero{ padding: 90px 5% 45px; }
+  .about-section{ padding: 45px 5%; gap: 16px; }
+  .about-gallery{ padding: 0 5% 65px; }
 
-  .about-hero::before{
-    width: 320px;
-    height: 320px;
-    top: -120px;
-  }
-
-  .about-hero::after{
-    bottom: -26px;
-    height: 58px;
-  }
-
-  .about-section{
-    padding: 46px 4% 36px;
-    gap: 14px;
-  }
-
-  .about-card{
-    padding: 18px 14px;
-    border-radius: 16px;
-  }
-
-  .about-card h2{
-    font-size: 22px;
-  }
-
-  .about-card p{
-    font-size: 15px;
-    line-height: 1.95;
-  }
-
-  .with-image .about-image img{
-    height: 220px;
-    border-radius: 14px;
-  }
-
-  .about-gallery{
-    padding: 50px 4% 56px;
-  }
-
-  .about-gallery h2{
-    margin-bottom: 18px;
-  }
+  .about-card{ padding: 20px 16px; border-radius: 16px; }
+  .about-card h2{ font-size: 18px; }
+  .about-card p{ font-size: 14px; }
 
   .gallery-grid{
     grid-template-columns: 1fr;
-    gap: 12px;
   }
+  .gallery-grid img{ height: 210px; }
 
-  .gallery-grid img{
-    height: 205px;
-    border-radius: 14px;
+  .about-highlights{
+    grid-template-columns: 1fr;
   }
 }
