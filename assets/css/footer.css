@@ -242,3 +242,41 @@
   transition:.2s;
 }
 .dev-link:hover{ background:rgba(255,255,255,.28); transform:translateY(-1px); }
+
+/* ===== Footer contact links fix ===== */
+footer a,
+.footer a{
+  color: rgba(255,255,255,.92) !important;
+  text-decoration: none;
+}
+
+footer a:visited,
+.footer a:visited{
+  color: rgba(255,255,255,.92) !important; /* باش مايتبدلش اللون */
+}
+
+footer a:hover,
+.footer a:hover{
+  color: #fff !important;
+  text-decoration: underline;
+}
+
+/* رقم الهاتف يبقى LTR وما يتقلبش فـ RTL */
+footer .contact-links a{
+  direction: ltr;
+  unicode-bidi: plaintext;
+  display: inline-block;
+  font-weight: 700;
+}
+
+footer .contact-item{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+footer .contact-links{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
