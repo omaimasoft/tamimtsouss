@@ -237,3 +237,8 @@
 
   .footer-bottom-inner{ padding: 0 5%; }
 }
+@media (max-width: 768px){
+  .footer-bottom{
+    display: none !important;
+  }
+}
