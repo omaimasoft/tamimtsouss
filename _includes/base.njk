@@ -2,8 +2,45 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>{{ title or "تعاونية تميمت سوس" }}</title>
+  <title>{{ title or "تعاونية تاميمت سوس" }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {# ✅ وصف افتراضي (يمكن تغييره من كل صفحة) #}
+  {% set metaDesc = description or "تعاونية تاميمت سوس تقدم عسل طبيعي مغربي من قلب سوس: السدر، الزعتر، الليمون، الدغموس وغيرها. جودة مضمونة وتوصيل لجميع مدن المغرب." %}
+
+  <meta name="description" content="{{ metaDesc }}">
+  <link rel="canonical" href="https://tamimtsouss.com{{ page.url }}">
+
+  {# ✅ Open Graph (للمشاركة في واتساب/فيسبوك) #}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="تعاونية تاميمت سوس">
+  <meta property="og:title" content="{{ title or 'تعاونية تاميمت سوس' }}">
+  <meta property="og:description" content="{{ metaDesc }}">
+  <meta property="og:url" content="https://tamimtsouss.com{{ page.url }}">
+  <meta property="og:image" content="https://tamimtsouss.com/assets/images/og.jpg">
+
+  {# ✅ Twitter (اختياري) #}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title or 'تعاونية تاميمت سوس' }}">
+  <meta name="twitter:description" content="{{ metaDesc }}">
+  <meta name="twitter:image" content="https://tamimtsouss.com/assets/images/og.jpg">
+
+  {# ✅ Structured Data: Organization #}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "تعاونية تاميمت سوس",
+    "url": "https://tamimtsouss.com",
+    "email": "tamimtsouss@gmail.com",
+    "telephone": ["+212763538294", "+212770898635"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "سوس ماسة",
+      "addressCountry": "MA"
+    }
+  }
+  </script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,16 +51,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <!-- CSS العام -->
-<link rel="stylesheet" href="/assets/css/style.css">
-<link rel="stylesheet" href="/assets/css/navbar.css">
-<link rel="stylesheet" href="/assets/css/footer.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/navbar.css">
+  <link rel="stylesheet" href="/assets/css/footer.css">
+
   <!-- CSS خاص بالصفحات -->
   {% if css %}
     {% for file in css %}
-<link rel="stylesheet" href="{{ file }}">   
- {% endfor %}
+      <link rel="stylesheet" href="{{ file }}">
+    {% endfor %}
   {% endif %}
-
 </head>
 
 <body>
