@@ -254,3 +254,48 @@
     text-align: center;
   }
 }
+
+
+/* ===== Fix footer bottom layout (RTL friendly) ===== */
+.footer-bottom{
+  padding: 16px 8%;          /* نفس padding ديال الفوتر */
+  background: rgba(0,0,0,.10);
+}
+
+.footer-bottom-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;   /* ✅ يخليهم فالنص ومايبقاوش متباعدين */
+  gap: 14px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.footer-credit{
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* خففي شكل dev-link باش مايبانش بحال “زر كبير” */
+.footer-credit .dev-link{
+  padding: 4px 10px;
+  font-size: 13px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.18);
+  color: #fff;
+  text-decoration: none;
+}
+
+
+@media (max-width: 768px){
+  .footer-bottom{ padding: 16px 5%; }
+  .footer-bottom-inner{
+    justify-content: center;
+    gap: 10px;
+  }
+}
