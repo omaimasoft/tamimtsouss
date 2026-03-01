@@ -113,10 +113,7 @@
   justify-self: start;    /* يبقى على اليسار */
   text-align: right;
 }
-.footer-logo{
-  background: rgba(255,255,255,.12);
-  border: 1px solid rgba(255,255,255,.18);
-}
+
 .footer-desc{
   max-width: 520px;
 }
