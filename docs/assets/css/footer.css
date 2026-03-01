@@ -91,6 +91,57 @@
   gap: 28px;
   align-items: start;
 }
+/* ✅ RTL grid alignment */
+.footer-inner{
+  direction: rtl;
+}
+
+/* عمود الشعار/الوصف (عادة footer-brand) نخليه مرتب */
+.footer-brand{
+  justify-self: end;      /* يبقى على اليمين */
+  text-align: right;
+}
+
+/* عمود الروابط (links) */
+.footer-links{
+  justify-self: center;
+  text-align: right;
+}
+
+/* عمود التواصل */
+.footer-contact{
+  justify-self: start;    /* يبقى على اليسار */
+  text-align: right;
+}
+.footer-logo{
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.18);
+}
+.footer-desc{
+  max-width: 520px;
+}
+@media (max-width: 768px){
+  .footer-inner{
+    text-align: center;
+  }
+
+  .footer-brand,
+  .footer-links,
+  .footer-contact{
+    justify-self: center;
+    text-align: center;
+  }
+
+  .footer-contact .contact-item{
+    justify-content: center;
+  }
+}
+.feature-item{
+  min-height: 92px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 /* Titles */
 .footer-premium h4{
