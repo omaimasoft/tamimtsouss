@@ -1,5 +1,9 @@
 /* =====================================================
-   FINAL: Footer + Features Bar (RTL + Mobile Friendly)
+   FINAL (Clean): Features Bar + Footer (Balanced)
+   - Brand (logo+desc) on LEFT
+   - Contact on RIGHT
+   - Links in middle
+   - Mobile: single column centered
 ===================================================== */
 
 /* =========================
@@ -9,7 +13,7 @@
   background: #f7f5ee;
   border-top: 1px solid #e9e3d6;
   border-bottom: 1px solid #e9e3d6;
-  padding: 14px 0;                     /* ✅ full width */
+  padding: 14px 0;
 }
 
 .features-container{
@@ -24,6 +28,10 @@
   flex: 1;
   text-align: center;
   padding: 10px 8px;
+  min-height: 92px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .feature-item + .feature-item{
@@ -39,7 +47,7 @@
   background: rgba(31,93,58,.08);
   color: #1f5d3a;
   font-size: 18px;
-  margin-bottom: 6px;
+  margin: 0 auto 6px;
 }
 
 .feature-item h4{
@@ -61,7 +69,7 @@
 ========================= */
 .footer-premium{
   position: relative;
-  padding: 54px 0 0;  /* ✅ full width */
+  padding: 54px 0 0;
   color: rgba(255,255,255,.92);
   overflow: hidden;
   background: linear-gradient(135deg,#0f4a2e 0%, #1f5d3a 65%, #b88a1b 100%);
@@ -80,64 +88,18 @@
   opacity: .9;
 }
 
-/* Container */
 .footer-inner{
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 8% 28px;
   display: grid;
-  grid-template-columns: 1.35fr 1fr 1fr 1.15fr;
+
+  /* ✅ توازن: (يمين) تواصل | روابط | منتجات | (يسار) براند */
+  grid-template-columns: 1.05fr 1fr 1fr 1.35fr;
   gap: 28px;
   align-items: start;
-}
-/* ✅ RTL grid alignment */
-.footer-inner{
-  direction: rtl;
-}
-
-/* عمود الشعار/الوصف (عادة footer-brand) نخليه مرتب */
-.footer-brand{
-  justify-self: end;      /* يبقى على اليمين */
-  text-align: right;
-}
-
-/* عمود الروابط (links) */
-.footer-links{
-  justify-self: center;
-  text-align: right;
-}
-
-/* عمود التواصل */
-.footer-contact{
-  justify-self: start;    /* يبقى على اليسار */
-  text-align: right;
-}
-
-.footer-desc{
-  max-width: 520px;
-}
-@media (max-width: 768px){
-  .footer-inner{
-    text-align: center;
-  }
-
-  .footer-brand,
-  .footer-links,
-  .footer-contact{
-    justify-self: center;
-    text-align: center;
-  }
-
-  .footer-contact .contact-item{
-    justify-content: center;
-  }
-}
-.feature-item{
-  min-height: 92px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  direction: rtl; /* RTL content */
 }
 
 /* Titles */
@@ -148,7 +110,6 @@
   font-size: 16px;
   display: inline-block;
 }
-
 .footer-premium h4::after{
   content:"";
   display:block;
@@ -159,8 +120,57 @@
   border-radius: 999px;
 }
 
-/* Brand */
-.footer-brand{ max-width: 520px; }
+/* ✅ Contact (right) */
+.footer-contact{
+  justify-self: start;
+  text-align: right;
+}
+.footer-contact .contact-item{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+.footer-contact .contact-icon{
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display:grid;
+  place-items:center;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.18);
+  flex: 0 0 auto;
+}
+.footer-contact a{
+  color: rgba(255,255,255,.92);
+  text-decoration: none;
+  font-weight: 700;
+}
+.footer-contact a:hover{ color:#fff; text-decoration: underline; }
+.footer-premium .phone{ direction:ltr; unicode-bidi: plaintext; display:inline-block; }
+.footer-premium .contact-links{ display:flex; flex-direction:column; gap:6px; }
+
+/* ✅ Links columns (center) */
+.footer-links{
+  justify-self: center;
+  text-align: right;
+}
+.footer-links ul{ list-style:none; padding:0; margin:0; }
+.footer-links li{ margin-bottom: 10px; }
+.footer-links a{
+  color: rgba(255,255,255,.90);
+  text-decoration:none;
+  font-weight:600;
+}
+.footer-links a:hover{ color:#fff; text-decoration: underline; }
+
+/* ✅ Brand (left) */
+.footer-brand{
+  justify-self: end;   /* في RTL: end = جهة اليسار */
+  text-align: right;
+  max-width: 520px;
+}
 
 .footer-logo{
   width: 170px;
@@ -168,6 +178,8 @@
   margin-bottom: 12px;
   padding: 10px 12px;
   border-radius: 14px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.18);
   backdrop-filter: blur(6px);
 }
 
@@ -191,7 +203,6 @@
   gap: 10px;
   flex-wrap: wrap;
 }
-
 .footer-social a{
   width: 40px;
   height: 40px;
@@ -203,110 +214,42 @@
   text-decoration:none;
   background: rgba(255,255,255,.12);
   border: 1px solid rgba(255,255,255,.18);
-  transition: .2s ease;
+  transition:.2s ease;
 }
-
 .footer-social a:hover{
   transform: translateY(-2px);
   background: rgba(255,255,255,.20);
 }
 
-/* Links */
-.footer-links ul{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-links li{ margin-bottom: 10px; }
-
-.footer-links a{
-  color: rgba(255,255,255,.90);
-  text-decoration: none;
-  font-weight: 600;
-  transition: .2s ease;
-}
-
-.footer-links a:hover{
-  color:#fff;
-  text-decoration: underline;
-}
-
-/* Contact */
-.footer-contact .contact-item{
-  display:flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 12px;
-  line-height: 1.7;
-}
-
-.footer-contact .contact-icon{
-  width: 40px;
-  height: 40px;
-  border-radius: 999px;
-  display:grid;
-  place-items:center;
-  background: rgba(255,255,255,.12);
-  border: 1px solid rgba(255,255,255,.18);
-  flex: 0 0 auto;
-}
-
-.footer-contact a{
-  color: rgba(255,255,255,.92);
-  text-decoration: none;
-  font-weight: 700;
-}
-.footer-contact a:hover{
-  color: #fff;
-  text-decoration: underline;
-}
-
-.footer-premium .phone{
-  direction: ltr;
-  unicode-bidi: plaintext;
-  display: inline-block;
-}
-
-.footer-premium .contact-links{
-  display:flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-/* Bottom bar (Desktop فقط) */
+/* Bottom bar */
 .footer-bottom{
   width: 100%;
   border-top: 1px solid rgba(255,255,255,.18);
   background: rgba(0,0,0,.14);
   padding: 16px 0;
 }
-
 .footer-bottom-inner{
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 8%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   gap: 14px;
   flex-wrap: wrap;
-  text-align: center;
+  text-align:center;
 }
-
 .footer-bottom p{
-  margin: 0;
-  font-size: 13px;
+  margin:0;
+  font-size:13px;
   color: rgba(255,255,255,.88);
 }
-
 .footer-credit{
-  margin: 0;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  margin:0;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
 }
-
 .dev-link{
   display:inline-flex;
   align-items:center;
@@ -320,30 +263,27 @@
   border: 1px solid rgba(255,255,255,.18);
   transition:.2s ease;
 }
-.dev-link:hover{
-  background: rgba(255,255,255,.22);
-  transform: translateY(-1px);
-}
+.dev-link:hover{ background: rgba(255,255,255,.22); transform: translateY(-1px); }
 
 /* =========================
    Responsive
 ========================= */
 @media (max-width: 992px){
   .features-container{ padding: 0 6%; }
+
   .footer-inner{
     padding: 0 6% 24px;
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: 1fr 1fr; /* 2 columns */
     gap: 22px;
   }
   .footer-bottom-inner{ padding: 0 6%; }
 }
 
-/* Mobile */
 @media (max-width: 768px){
-  /* Features: 2×2 */
+  /* Features: 2x2 and hide text */
   .features-container{
     padding: 0 5%;
-    display: grid;
+    display:grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
   }
@@ -354,24 +294,32 @@
     padding: 12px 10px;
   }
   .feature-item + .feature-item{ border-inline-start: none; }
-  .feature-item p{ display: none; }
+  .feature-item p{ display:none; }
 
-  /* Footer: عمود واحد */
+  /* Footer: single column centered */
   .footer-inner{
     padding: 0 5% 22px;
     grid-template-columns: 1fr;
     gap: 18px;
+    text-align:center;
+  }
+
+  .footer-brand,
+  .footer-links,
+  .footer-contact{
+    justify-self: center;
     text-align: center;
   }
+
   .footer-logo{ margin-inline: auto; }
   .footer-social{ justify-content: center; }
   .footer-contact .contact-item{ justify-content: center; }
-  .footer-contact .contact-links{ align-items: center; }
+  .footer-premium .contact-links{ align-items: center; }
 
- 
+  /* إذا بغيتي تخفي الشريط السفلي فالهاتف فعّل هاد السطر */
+  /* .footer-bottom{ display:none; } */
 }
 
-/* Small mobile */
 @media (max-width: 420px){
   .features-container{ grid-template-columns: 1fr; }
 }
