@@ -6,17 +6,14 @@ css:
 ---
 
 <section class="cart-page">
-
   <h1 class="cart-title">سلة المشتريات</h1>
 
   <div class="cart-layout">
-
     <!-- المنتجات -->
     <div class="cart-items" id="cart-items"></div>
 
     <!-- ملخص الطلب -->
     <aside class="cart-summary">
-
       <h3>ملخص الطلب</h3>
 
       <div class="summary-line">
@@ -41,35 +38,50 @@ css:
       <button class="danger-btn" onclick="clearCart()">
         تفريغ السلة
       </button>
-
     </aside>
-
   </div>
-
 </section>
 
 <script>
-function confirmOrder() {
-  // ✅ بدّلي الرقم هنا
-  let phoneRaw = "+212 763-538294";
-  let phone = phoneRaw.replace(/[^\d]/g, ""); // => 212763538294
+/**
+ * ✅ مهم: خلي الرقم هنا "نقي" فقط أرقام
+ * مثال المغرب: 2126xxxxxxxx أو 2127xxxxxxxx
+ */
+const WHATSAPP_PHONE = "212763538294"; // <-- بدّلي هذا
 
-  const cart = getCart();
+// نخلي الدالة Global بشكل صريح
+window.confirmOrder = function () {
+  const cart = (typeof getCart === "function") ? getCart() : [];
+
   if (!cart || cart.length === 0) {
     alert("السلة فارغة");
     return;
   }
 
-  let msg = "طلب جديد من الموقع:%0A";
+  // نبني الرسالة
+  let lines = ["🛒 طلب جديد من الموقع:"];
+  let total = 0;
+
   cart.forEach(item => {
-    msg += `• ${item.name} × ${item.qty} = ${item.price * item.qty} درهم%0A`;
+    const qty = Number(item.qty || 0);
+    const price = Number(item.price || 0);
+    const itemTotal = price * qty;
+    total += itemTotal;
+
+    lines.push(`• ${item.name} × ${qty} = ${itemTotal} درهم`);
   });
 
-  let total = cart.reduce((s, it) => s + (it.price * it.qty), 0);
-  msg += `%0Aالمجموع: ${total} درهم`;
+  lines.push("");
+  lines.push(`المجموع: ${total} درهم`);
 
-  // ✅ استعملي api.whatsapp.com (أحياناً أسلس من wa.me)
-  const url = `https://api.whatsapp.com/send?phone=${phone}&text=${msg}`;
-  window.open(url, "_blank");
-}
+  const text = encodeURIComponent(lines.join("\n"));
+
+  // ✅ هذا الرابط هو الأكثر استقراراً
+  const url = `https://wa.me/${WHATSAPP_PHONE}?text=${text}`;
+
+  // ✅ للتأكد شنو الرقم اللي فعلاً كيتستعمل
+  console.log("WhatsApp URL:", url);
+
+  window.open(url, "_blank", "noopener,noreferrer");
+};
 </script>
