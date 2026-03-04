@@ -94,9 +94,11 @@ function confirmOrder() {
 
   message += `\n💰 المجموع: ${total} درهم`;
 
-  const phone = "212600000000"; // 🔴 بدّلي الرقم
-  const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-  window.open(url, "_blank");
+const WHATSAPP_PHONE = "212763538294";
+
+  const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank");;
 }
 
 document.addEventListener("DOMContentLoaded", updateCartIcon);
+
