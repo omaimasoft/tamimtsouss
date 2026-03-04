@@ -49,39 +49,80 @@ css:
 </section>
 
 <script>
-/* ✅ رقم واتساب (أرقام فقط) */
-const WHATSAPP_PHONE = "212763538294"; // <-- بدّلي هنا
+document.addEventListener("DOMContentLoaded", function () {
+  const WHATSAPP_PHONE = "212763538294"; // <-- بدّلي هنا
 
-window.confirmOrder = function () {
+  const cartItemsEl = document.getElementById("cart-items");
+  const subtotalEl  = document.getElementById("cart-subtotal");
+  const totalEl     = document.getElementById("cart-total");
+  const shippingEl  = document.getElementById("shipping-cost");
+
+  if (!cartItemsEl) return;
+
   const cart = getCart();
-  if (!cart || cart.length === 0) {
-    alert("السلة فارغة حالياً");
+  let total = 0;
+
+  if (cart.length === 0) {
+    cartItemsEl.innerHTML = `
+      <div class="empty-cart">
+       السلة فارغة حالياً
+      </div>
+    `;
+    subtotalEl.textContent = "0";
+    totalEl.textContent = "0";
+    shippingEl.textContent = "0";
     return;
   }
 
-  // ✅ نحسب المجموع ونبني الرسالة
-  let total = 0;
-  let lines = ["🛒 طلب جديد من الموقع:"];
+  cartItemsEl.innerHTML = "";
 
   cart.forEach(item => {
-    const itemTotal = Number(item.price) * Number(item.qty);
+
+    const itemTotal = item.price * item.qty;
     total += itemTotal;
-    lines.push(`• ${item.name} × ${item.qty} = ${itemTotal} درهم`);
+
+    cartItemsEl.innerHTML += `
+      <div class="cart-item">
+
+        <!-- زر الحذف في الأعلى -->
+        <button class="remove-btn"
+          onclick="removeFromCart('${item.id}')">
+          <span class="material-icons">close</span>
+        </button>
+
+        <div class="cart-image">
+          <img src="${item.image}" alt="${item.name}">
+        </div>
+
+        <div class="cart-info">
+
+          <h3>${item.name}</h3>
+          <p class="price">${item.price} درهم</p>
+
+          <div class="cart-qty">
+            <button onclick="updateQty('${item.id}', ${item.qty - 1})"
+              ${item.qty === 1 ? "disabled" : ""}>−</button>
+
+            <span>${item.qty}</span>
+
+            <button onclick="updateQty('${item.id}', ${item.qty + 1})">+</button>
+          </div>
+
+          <p class="item-total">المجموع: ${itemTotal} درهم</p>
+
+        </div>
+
+      </div>
+    `;
   });
 
-  // التوصيل نفس القاعدة اللي عندك
-  const shipping = total >= 600 ? 0 : 40;
-  const finalTotal = total + shipping;
+  // حساب التوصيل
+  let shipping = total >= 600 ? 0 : 40;
+  let finalTotal = total + shipping;
 
-  lines.push("");
-  lines.push(`المجموع الفرعي: ${total} درهم`);
-  lines.push(`التوصيل: ${shipping} درهم`);
-  lines.push(`الإجمالي: ${finalTotal} درهم`);
+  subtotalEl.textContent = total;
+  shippingEl.textContent = shipping;
+  totalEl.textContent = finalTotal;
 
-  const text = encodeURIComponent(lines.join("\n"));
-
-  // ✅ أفضل رابط (ما فيهش + ولا -)
-  const url = `https://wa.me/${WHATSAPP_PHONE}?text=${text}`;
-  window.open(url, "_blank", "noopener,noreferrer");
-};
+});
 </script>
