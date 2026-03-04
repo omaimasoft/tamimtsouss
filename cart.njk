@@ -47,35 +47,29 @@ css:
   </div>
 
 </section>
+
 <script>
 function confirmOrder() {
+  // ✅ بدّلي الرقم هنا
+  let phoneRaw = "+212 763-538294";
+  let phone = phoneRaw.replace(/[^\d]/g, ""); // => 212763538294
+
   const cart = getCart();
   if (!cart || cart.length === 0) {
     alert("السلة فارغة");
     return;
   }
 
-  // رقم واتساب (ممكن تكتبيه كيف بغيتي وهو ينقّيه)
-  let phoneRaw = "+212 763-538294";
-  let phone = phoneRaw.replace(/[^\d]/g, ""); // يحذف + و المسافات و -
-
-  // رسالة الطلب
-  let msg = "🛒 طلب جديد:%0A";
+  let msg = "طلب جديد من الموقع:%0A";
   cart.forEach(item => {
-    msg += `- ${item.name} × ${item.qty} = ${item.price * item.qty} درهم%0A`;
+    msg += `• ${item.name} × ${item.qty} = ${item.price * item.qty} درهم%0A`;
   });
 
-  // الحساب
-  let total = cart.reduce((s, it) => s + it.price * it.qty, 0);
-  let shipping = total >= 600 ? 0 : 40;
-  let finalTotal = total + shipping;
+  let total = cart.reduce((s, it) => s + (it.price * it.qty), 0);
+  msg += `%0Aالمجموع: ${total} درهم`;
 
-  msg += `%0Aالمجموع الفرعي: ${total} درهم%0A`;
-  msg += `التوصيل: ${shipping} درهم%0A`;
-  msg += `الإجمالي: ${finalTotal} درهم%0A`;
-
-  // فتح واتساب
-  const url = `https://wa.me/${phone}?text=${msg}`;
+  // ✅ استعملي api.whatsapp.com (أحياناً أسلس من wa.me)
+  const url = `https://api.whatsapp.com/send?phone=${phone}&text=${msg}`;
   window.open(url, "_blank");
 }
 </script>
