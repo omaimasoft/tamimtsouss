@@ -1,16 +1,20 @@
 /* ================= GLOBAL ================= */
 *,
 *::before,
-*::after { box-sizing: border-box; }
-
-body.menu-open { overflow: hidden; }
-*{
-  background-color: aqua;
+*::after {
+  box-sizing: border-box;
 }
-/* ================= TOP BAR ================= */
-.top-bar{
+
+body.menu-open {
+  overflow: hidden;
+}
+
+/* ================= NAVBAR ================= */
+.top-bar {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 32px;
   background: #1f5d3a;
   color: #fff;
@@ -20,197 +24,157 @@ body.menu-open { overflow: hidden; }
   z-index: 10000;
   font-size: 14px;
 }
-
-/* ================= NAVBAR ================= */
-.navbar{
+.navbar {
   position: fixed;
-  top: 32px;
-  left: 0; right: 0;
+  top: 0;
+  right: 0;
+  left: 0;
   width: 100%;
   z-index: 9999;
   background: #fff;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 
-/* ✅ مرة وحدة فقط */
-body{
-  padding-top: 120px; /* 32 top bar + navbar */
+body {
+  padding-top: 110px; 
 }
 
-/* Container */
-.nav-container{
+.navbar {
+  position: fixed;
+  top: 32px;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: #ffffff;
+}
+
+body {
+  padding-top: 120px; /* عدلي حسب ارتفاع النافبار */
+}
+
+.nav-container {
   max-width: 1200px;
   margin: auto;
-  padding: 14px 16px;
+  padding: 14px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   direction: rtl;
-  gap: 10px; /* ✅ يقلل الفراغ */
 }
 
 /* ================= LOGO ================= */
-.site-logo{
-  display: flex;
-  align-items: center;
-  flex: 0 1 auto;
-}
 
-.site-logo img{
-  display: block;
-  width: 150px;
-  height: auto;
+.site-logo img {
+  width: 170px;
   max-width: 100%;
-  object-fit: contain;
 }
 
 /* ================= LINKS (Desktop) ================= */
-.nav-links{
+
+.nav-links {
   list-style: none;
   display: flex;
-  gap: 28px;
+  gap: 32px;
   margin: 0;
   padding: 0;
   justify-content: center;
-  align-items: center;
 }
 
-.nav-links a{
+.nav-links a {
   font-size: 16px;
   font-weight: 600;
   color: #1f5d3a;
   text-decoration: none;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 
-.nav-links a:hover{ color: #f2b705; }
+.nav-links a:hover {
+  color: #f2b705;
+}
 
 /* ================= ICONS ================= */
-.nav-icons{
+
+.nav-icons {
   display: flex;
   align-items: center;
-  gap: 10px;
-  flex: 0 0 auto;
+  gap: 14px;
+  justify-self: end;
 }
 
-/* ✅ Cart button (Material Icons) */
-.cart-icon{
+.cart-icon {
   position: relative;
-  width: 40px;
-  height: 40px;
-  display: grid;
-  place-items: center;
-  border-radius: 12px;
   cursor: pointer;
-  transition: 0.2s;
 }
 
-.cart-icon:hover{
-  background: rgba(31,93,58,0.08);
-}
-
-.cart-icon .material-icons{
-  font-size: 24px;
-  color: #1f5d3a;
-  line-height: 1;
-}
-
-/* Badge */
-.cart-count{
+.cart-count {
   position: absolute;
-  top: 6px;
-  right: 6px;            /* ✅ RTL */
-  min-width: 18px;
-  height: 18px;
-  padding: 0 5px;
-  border-radius: 999px;
-  display: grid;
-  place-items: center;
+  top: -6px;
+  left: -8px;
   background: #f2b705;
   color: #000;
   font-size: 11px;
-  font-weight: 700;
-  line-height: 1;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
 }
 
 /* ================= MENU BUTTON ================= */
-.menu-toggle{
+
+.menu-toggle {
   width: 28px;
   height: 22px;
   display: none;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
-  z-index: 1201; /* فوق overlay */
+  z-index: 1200;
 }
 
-.menu-toggle span{
+.menu-toggle span {
   height: 3px;
   width: 100%;
   background: #1f3d1b;
   border-radius: 2px;
-  transition: 0.25s ease;
+  transition: 0.3s ease;
 }
 
-.menu-toggle.active span:nth-child(1){
+/* Animation to X */
+.menu-toggle.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
-.menu-toggle.active span:nth-child(2){ opacity: 0; }
-.menu-toggle.active span:nth-child(3){
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* ================= OVERLAY ================= */
-.nav-overlay{
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.2s;
-  z-index: 1100;
-}
-
-.nav-overlay.active{
-  opacity: 1;
-  visibility: visible;
-}
-
 /* ================= MOBILE ================= */
-@media (max-width: 900px){
 
-  /* ✅ لوغو فالهاتف بلا فراغات كثيرة */
-  .site-logo img{
-    width: auto;
-    height: 38px;        /* ثابت */
-    max-width: 160px;
+@media (max-width: 900px) {
+
+  .menu-toggle {
+    display: flex;
   }
 
-  /* زر المينو يبان */
-  .menu-toggle{ display: flex; }
-
-  /* المينو Fullscreen */
-  .nav-links{
-    display: none;
+  .nav-links {
+    display: none;           /* مخفية افتراضياً */
     position: fixed;
     inset: 0;
     background: #fff;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 34px;
-    z-index: 1200;       /* فوق overlay */
-    text-align: center;
-    padding: 30px 20px;
+    gap: 40px;
+    z-index: 1100;
   }
 
-  .nav-links.active{ display: flex; }
+  .nav-links.active {
+    display: flex;           /* تظهر فقط عند الفتح */
+  }
 
-  .nav-links a{ font-size: 22px; }
-
-  /* ✅ تحسين توزيع العناصر فالهاتف */
-  .nav-container{
-    padding: 12px 12px;
-    gap: 8px;
+  .nav-links a {
+    font-size: 22px;
   }
 }
