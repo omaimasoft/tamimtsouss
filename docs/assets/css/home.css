@@ -788,6 +788,7 @@ margin-top: -80px;
   font-size: 18px;
   font-weight: 900;
   color: #1f5d3a;
+  text-align: center; /* يجعل العنوان في الوسط */
 }
 
 /* Desc */
