@@ -790,6 +790,16 @@ margin-top: -80px;
   color: #1f5d3a;
   text-align: center; /* يجعل العنوان في الوسط */
 }
+.package-desc{
+  text-align: center;
+  line-height: 1.8;
+  font-size: 14px;
+  color: rgba(0,0,0,.65);
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
 /* Desc */
 .package-desc{
