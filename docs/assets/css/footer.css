@@ -323,7 +323,7 @@
 }
 
 .footer-premium{
-  background: linear-gradient(135deg,#0f4a2e 0%, #1f5d3a 50%, #eaea69 100%);
+  background: linear-gradient(135deg,#0f4a2e 0%, #1f5d3a 50%, #fab923 100%);
 }
 /* ✅ FIX (Contact page): خلي نص وروابط التواصل فالفوتر أبيض */
 .footer-premium .footer-contact,
