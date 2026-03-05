@@ -325,15 +325,15 @@
 .footer-premium{
   background: linear-gradient(135deg,#0f4a2e 0%, #1f5d3a 50%, #eaea69 100%);
 }
-.footer-bottom{
-  background:#fff !important;
-  border-top:1px solid rgba(0,0,0,.08) !important;
+/* ✅ FIX (Contact page): خلي نص وروابط التواصل فالفوتر أبيض */
+.footer-premium .footer-contact,
+.footer-premium .footer-contact * {
+  color: #fff !important;
 }
-.footer-bottom p,
-.footer-bottom .dev-link{
-  color:#1f5d3a !important;
-}
-.footer-bottom .dev-link{
-  background: rgba(31,93,58,.08) !important;
-  border:1px solid rgba(31,93,58,.18) !important;
+
+/* حتى الvisited/hover مايبقاوش كيتبدلو */
+.footer-premium .footer-contact a,
+.footer-premium .footer-contact a:visited,
+.footer-premium .footer-contact a:hover {
+  color: #fff !important;
 }
