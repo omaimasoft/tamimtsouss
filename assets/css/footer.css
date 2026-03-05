@@ -323,5 +323,8 @@
 }
 
 .footer-premium{
-  background: linear-gradient(135deg,#0f4a2e 0%, #1f5d3a 50%, #2f6b2a 100%);
+  background: linear-gradient(135deg,#0f4a2e 0%, #1f5d3a 50%, #eaea69 100%);
+}
+.footer-bottom{
+  background: #ffffff;
 }
