@@ -2,6 +2,32 @@ html, body{
   width:100%;
   overflow-x:hidden;
 }
+/* وسط النصوص (العنوان + الفقرة) داخل الهيدر ديال الأقسام */
+.section-header{
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 18px;
+}
+
+.section-header p{
+  margin: 10px auto 0;
+  line-height: 1.9;
+}
+/* ✅ افتراضياً مخفية (Desktop) */
+.scroll-hint{
+  display: none;
+  text-align: center;
+  margin: 14px auto 10px;
+  font-size: 14px;
+  color: rgba(0,0,0,0.55);
+}
+
+/* ✅ تظهر فقط فالهاتف */
+@media (max-width: 900px){
+  .scroll-hint{
+    display: block;
+  }
+}
 /* =========================================
    HOME HERO - Responsive Professional
    نص فاليمين + صورة فاليسار
