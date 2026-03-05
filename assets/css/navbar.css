@@ -4,7 +4,9 @@
 *::after {
   box-sizing: border-box;
 }
-
+*{
+  background-color: #f2b705;
+}
 body.menu-open {
   overflow: hidden;
 }
