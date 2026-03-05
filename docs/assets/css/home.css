@@ -1025,3 +1025,94 @@ p.center-paragraph{
   margin-bottom: 10px !important;
   line-height: 1.9 !important;
 }
+/* ================= CTA SECTION (FIX iPhone) ================= */
+.cta-section{
+  background: #0f5a2e;          /* ✅ الخلفية الخضراء */
+  color: #fff;
+  padding: 70px 7%;
+}
+
+.cta-content{
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;          /* ✅ وسط */
+}
+
+.cta-content h2{
+  margin: 0 0 14px;
+  font-size: 46px;
+  font-weight: 900;
+  color: #fff;
+}
+
+.cta-content p{
+  margin: 0 auto 26px;
+  max-width: 760px;
+  line-height: 1.9;
+  color: rgba(255,255,255,0.88);
+  font-size: 16px;
+}
+
+.cta-buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.cta-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: 0.2s;
+  min-width: 190px;
+}
+
+/* primary (أبيض) */
+.cta-btn.primary{
+  background: #fff;
+  color: #0f5a2e;
+  border: 2px solid #fff;
+}
+.cta-btn.primary:hover{
+  opacity: 0.92;
+}
+
+/* secondary (شفاف بحد) */
+.cta-btn.secondary{
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.85);
+}
+.cta-btn.secondary:hover{
+  background: rgba(255,255,255,0.12);
+}
+
+/* ✅ Mobile fix (iPhone Safari) */
+@media (max-width: 900px){
+  .cta-section{
+    padding: 46px 18px;
+    min-height: 70vh;
+    min-height: 70svh;
+    min-height: 70dvh;
+  }
+
+  .cta-content h2{
+    font-size: 30px;
+  }
+
+  .cta-content p{
+    font-size: 15px;
+  }
+
+  .cta-btn{
+    width: 100%;
+    max-width: 320px;
+  }
+}
