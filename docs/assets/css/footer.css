@@ -322,23 +322,4 @@
   .features-container{ grid-template-columns: 1fr; }
 }
 
-/* ===== FORCE GREEN FOOTER (ضعه آخر شيء) ===== */
-.footer-premium{
-  background: #0f4a2e !important; /* أخضر ثابت */
-}
-
-/* حيّدي أي توهج/تأثير كيبدّل اللون */
-.footer-premium::before,
-.footer-premium::after{
-  content: none !important;
-  background: none !important;
-}
-
-/* الشريط السفلي هو اللي كيعطي البني/الكاكي */
-.footer-bottom{
-  background: transparent !important;
-}
-.footer-bottom{
-  background: rgba(15,74,46,0.35) !important; /* أخضر شفاف */
-  border-top: 1px solid rgba(255,255,255,.18) !important;
-}
+.footer-premium{ background: red !important; }
