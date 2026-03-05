@@ -2,16 +2,12 @@ html, body{
   width:100%;
   overflow-x:hidden;
 }
-/* وسط النصوص (العنوان + الفقرة) داخل الهيدر ديال الأقسام */
-.section-header{
+.center-paragraph{
   text-align: center;
   max-width: 900px;
-  margin: 0 auto 18px;
-}
-
-.section-header p{
-  margin: 10px auto 0;
+  margin: 10px auto;
   line-height: 1.9;
+  color: rgba(0,0,0,0.7);
 }
 /* ✅ افتراضياً مخفية (Desktop) */
 .scroll-hint{
