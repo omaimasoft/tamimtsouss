@@ -180,7 +180,7 @@ body{
   /* ✅ لوغو مزيان بلا فراغات */
   .site-logo img{
     width: auto;
-    height: 38px;          /* ✅ ثابت */
+    height: 90px;          /* ✅ ثابت */
     max-width: 150px;
   }
 
