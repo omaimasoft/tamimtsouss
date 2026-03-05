@@ -63,13 +63,11 @@ body {
 
 /* ================= LOGO ================= */
 
-.site-logo img {
-  width: 100px;
+.site-logo img{
+  width: clamp(120px, 12vw, 170px);
+  height: auto;
   max-width: 100%;
-  margin-left: 120px;
-  background-color: #48c214;
 }
-
 /* ================= LINKS (Desktop) ================= */
 
 .nav-links {
