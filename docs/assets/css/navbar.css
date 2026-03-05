@@ -127,7 +127,7 @@ body{
 /* badge */
 .cart-count{
   position: absolute;
-  top: 6px;
+  top: 5px;
   right: 6px;             /* ✅ RTL */
   min-width: 18px;
   height: 18px;
