@@ -659,7 +659,8 @@ margin-top: -80px;
   background: white;
   padding-left: 4px;
 }
-/* ================= PACKAGES HOME (PRO) ================= */
+
+/* ================= PACKAGES HOME (PRO FULL) ================= */
 .home-packages{
   padding: 56px 7%;
   background: linear-gradient(180deg, #fffef9 0%, #f8f7f2 100%);
@@ -674,6 +675,7 @@ margin-top: -80px;
   margin: 0;
   font-size: 30px;
   color: #1f5d3a;
+  font-weight: 900;
 }
 
 .home-packages .section-header p{
@@ -682,6 +684,7 @@ margin-top: -80px;
   font-size: 15px;
 }
 
+/* GRID */
 .packages-grid{
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -690,6 +693,7 @@ margin-top: -80px;
   margin: 0 auto;
 }
 
+/* CARD */
 .package-card-home{
   background: #fff;
   border: 1px solid rgba(31,93,58,0.12);
@@ -704,79 +708,111 @@ margin-top: -80px;
   box-shadow: 0 18px 45px rgba(0,0,0,0.10);
 }
 
+/* IMAGE AREA */
 .package-media{
   position: relative;
   display: block;
-  background: #fafaf6;
+  background: #fbfaf5; /* ✅ خلفية ناعمة للصورة */
+  overflow: hidden;
 }
 
+/* ✅ نفس الارتفاع + قص احترافي */
 .package-media img{
   width: 100%;
   height: 240px;
   object-fit: cover;
+  object-position: center;
   display: block;
+  transform: scale(1);
+  transition: transform .35s ease;
 }
 
+/* ✅ Overlay خفيف يعطي عمق */
+.package-media::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.10) 100%);
+  pointer-events:none;
+}
+
+/* ✅ تكبير بسيط عند hover */
+.package-card-home:hover .package-media img{
+  transform: scale(1.03);
+}
+
+/* PRICE BADGE */
 .price-badge{
   position: absolute;
   top: 14px;
   right: 14px;
   background: #f2b705;
   color: #000;
-  font-weight: 800;
-  font-size: 13px;
-  padding: 8px 10px;
+  font-weight: 900;
+  font-size: 12px;
+  padding: 7px 10px;
   border-radius: 999px;
   box-shadow: 0 10px 18px rgba(0,0,0,0.12);
+  z-index: 2;
 }
 
+/* BODY */
 .package-body{
   padding: 16px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 175px; /* ✅ يخلي جميع الكروت متساويين */
 }
 
+/* Title */
 .package-title{
-  margin: 0 0 8px;
+  margin: 0;
   font-size: 18px;
-  font-weight: 800;
+  font-weight: 900;
   color: #1f5d3a;
 }
 
+/* Desc */
 .package-desc{
-  margin: 0 0 14px;
+  margin: 0;
   color: rgba(0,0,0,0.65);
   font-size: 14px;
-  line-height: 1.7;
-  min-height: 48px;
+  line-height: 1.8;
 }
 
+/* ✅ الزر ديما لتحت ووسط */
 .package-actions{
+  margin-top: auto;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
+/* BUTTON */
 .btn-package{
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 11px 14px;
-  border-radius: 12px;
+  padding: 11px 16px;
+  border-radius: 14px;
   background: #1f5d3a;
   color: #fff;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 800;
   transition: 0.2s ease;
+  min-width: 160px;
 }
 
 .btn-package:hover{
   background: #17492d;
 }
 
-/* Responsive */
+/* RESPONSIVE */
 @media (max-width: 900px){
+  .home-packages{ padding: 44px 6%; }
   .packages-grid{ grid-template-columns: 1fr; }
   .package-media img{ height: 220px; }
-  .home-packages{ padding: 44px 6%; }
+  .btn-package{ width: 100%; }
 }
 /* ===== Testimonials ===== */
 .testimonials{
