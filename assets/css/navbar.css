@@ -90,25 +90,36 @@ body {
 .nav-links a:hover {
   color: #f2b705;
 }
-
 /* ================= ICONS ================= */
 
 .nav-icons {
   display: flex;
-  align-items: center;
-  gap: 14px;
-  justify-self: end;
+  align-items: center;   /* ✅ نفس الارتفاع */
+  gap: 10px;             /* مسافة صغيرة */
 }
 
+/* أيقونة السلة */
 .cart-icon {
   position: relative;
   cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* أيقونة Material */
+.cart-icon .material-icons{
+  font-size: 24px;
+  line-height: 1;
+}
+
+/* عداد السلة */
 .cart-count {
   position: absolute;
-  top: -6px;
-  left: -8px;
+  top: -4px;
+  right: -6px;   /* بدل left لأن الموقع RTL */
   background: #f2b705;
   color: #000;
   font-size: 11px;
@@ -116,6 +127,8 @@ body {
   border-radius: 50%;
   font-weight: bold;
 }
+
+
 
 /* ================= MENU BUTTON ================= */
 
