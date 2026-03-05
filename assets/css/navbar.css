@@ -1,16 +1,16 @@
 /* ================= GLOBAL ================= */
 *,
 *::before,
-*::after {
+*::after{
   box-sizing: border-box;
 }
 
-body.menu-open {
+body.menu-open{
   overflow: hidden;
 }
 
-/* ================= NAVBAR ================= */
-.top-bar {
+/* ================= TOP BAR ================= */
+.top-bar{
   position: fixed;
   top: 0;
   left: 0;
@@ -24,142 +24,174 @@ body.menu-open {
   z-index: 10000;
   font-size: 14px;
 }
-.navbar {
+
+/* ================= NAVBAR ================= */
+.navbar{
   position: fixed;
-  top: 0;
-  right: 0;
+  top: 32px;              /* تحت top-bar */
   left: 0;
+  right: 0;
   width: 100%;
   z-index: 9999;
   background: #fff;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 
-body {
-  padding-top: 110px; 
+/* ✅ مرة وحدة فقط */
+body{
+  padding-top: 120px;     /* 32px topbar + navbar */
 }
 
-.navbar {
-  position: fixed;
-  top: 32px;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-  background: #ffffff;
-}
-
-body {
-  padding-top: 120px; /* عدلي حسب ارتفاع النافبار */
-}
-
-.nav-container {
+/* الحاوية */
+.nav-container{
   max-width: 1200px;
   margin: auto;
-  padding: 14px 20px;
+  padding: 14px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   direction: rtl;
+  gap: 10px;              /* ✅ كيقلّل الفراغات */
 }
 
 /* ================= LOGO ================= */
+.site-logo{
+  display: flex;
+  align-items: center;
+  flex: 0 1 auto;
+}
 
-.site-logo img {
-  width: 170px;
+.site-logo img{
+  display: block;
+  width: 150px;
   max-width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 /* ================= LINKS (Desktop) ================= */
-
-.nav-links {
+.nav-links{
   list-style: none;
   display: flex;
   gap: 32px;
   margin: 0;
   padding: 0;
   justify-content: center;
+  align-items: center;
 }
 
-.nav-links a {
+.nav-links a{
   font-size: 16px;
   font-weight: 600;
   color: #1f5d3a;
   text-decoration: none;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
-.nav-links a:hover {
+.nav-links a:hover{
   color: #f2b705;
 }
 
 /* ================= ICONS ================= */
-
-.nav-icons {
+.nav-icons{
   display: flex;
   align-items: center;
-  gap: 14px;
-  justify-self: end;
+  gap: 10px;
+  flex: 0 0 auto;
 }
 
-.cart-icon {
+/* ✅ Cart button look */
+.cart-icon{
   position: relative;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
   cursor: pointer;
+  transition: 0.2s;
 }
 
-.cart-count {
+.cart-icon:hover{
+  background: rgba(31,93,58,0.08);
+}
+
+/* إذا كانت السلة svg أو img */
+.cart-icon img,
+.cart-icon svg{
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+/* badge */
+.cart-count{
   position: absolute;
-  top: -6px;
-  left: -8px;
+  top: 6px;
+  right: 6px;             /* ✅ RTL */
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
   background: #f2b705;
   color: #000;
   font-size: 11px;
-  padding: 2px 6px;
-  border-radius: 50%;
-  font-weight: bold;
+  font-weight: 700;
+  line-height: 1;
 }
 
 /* ================= MENU BUTTON ================= */
-
-.menu-toggle {
+.menu-toggle{
   width: 28px;
   height: 22px;
-  display: none;
+  display: none;           /* يظهر فقط فالموبايل */
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
   z-index: 1200;
 }
 
-.menu-toggle span {
+.menu-toggle span{
   height: 3px;
   width: 100%;
   background: #1f3d1b;
   border-radius: 2px;
-  transition: 0.3s ease;
+  transition: 0.25s ease;
 }
 
 /* Animation to X */
-.menu-toggle.active span:nth-child(1) {
+.menu-toggle.active span:nth-child(1){
   transform: rotate(45deg) translate(5px, 5px);
 }
 
-.menu-toggle.active span:nth-child(2) {
+.menu-toggle.active span:nth-child(2){
   opacity: 0;
 }
 
-.menu-toggle.active span:nth-child(3) {
+.menu-toggle.active span:nth-child(3){
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
 /* ================= MOBILE ================= */
+@media (max-width: 900px){
 
-@media (max-width: 900px) {
+  /* ✅ لوغو مزيان بلا فراغات */
+  .site-logo img{
+    width: auto;
+    height: 38px;          /* ✅ ثابت */
+    max-width: 150px;
+  }
 
-  .menu-toggle {
+  /* زر المينو يبان */
+  .menu-toggle{
     display: flex;
   }
 
-  .nav-links {
-    display: none;           /* مخفية افتراضياً */
+  /* الروابط تتحول لميونو كامل الشاشة */
+  .nav-links{
+    display: none;         /* مخفية افتراضياً */
     position: fixed;
     inset: 0;
     background: #fff;
@@ -168,13 +200,14 @@ body {
     align-items: center;
     gap: 40px;
     z-index: 1100;
+    text-align: center;
   }
 
-  .nav-links.active {
-    display: flex;           /* تظهر فقط عند الفتح */
+  .nav-links.active{
+    display: flex;
   }
 
-  .nav-links a {
+  .nav-links a{
     font-size: 22px;
   }
 }
