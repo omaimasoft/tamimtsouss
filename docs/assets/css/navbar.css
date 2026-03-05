@@ -4,7 +4,9 @@
 *::after { box-sizing: border-box; }
 
 body.menu-open { overflow: hidden; }
-
+*{
+  background-color: aqua;
+}
 /* ================= TOP BAR ================= */
 .top-bar{
   position: fixed;
