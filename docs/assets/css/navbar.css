@@ -66,8 +66,8 @@ body {
 .site-logo img {
   width: 100px;
   max-width: 100%;
-  margin-left: 20px;
-  background-color: #1f5d3a;
+  margin-left: -20px;
+  background-color: #c214a2;
 }
 
 /* ================= LINKS (Desktop) ================= */
