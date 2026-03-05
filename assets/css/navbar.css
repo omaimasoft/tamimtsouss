@@ -64,8 +64,9 @@ body {
 /* ================= LOGO ================= */
 
 .site-logo img {
-  width: 170px;
+  width: 100px;
   max-width: 100%;
+  margin-left: 20px;
 }
 
 /* ================= LINKS (Desktop) ================= */
